@@ -48,9 +48,9 @@ namespace LibraryManagement.Presenters
             _bookview.CloseForm += CloseForm;
             _dialog.Save += Save;
             _dialog.Cancel += Cancel;
-            _bookview.SetBookListBindingSource(booksBindingSource);
-
+            
             SetUp();
+            _bookview.SetBookListBindingSource(booksBindingSource);
         }
 
         private void CloseForm(object sender, EventArgs e)
@@ -114,7 +114,8 @@ namespace LibraryManagement.Presenters
 
             _dialog.CategoriessBindingSource(categoryBindingSource);
             _dialog.IsEdit = false;
-            _dialog.DialogTitle = "Add book";
+            _dialog.Categiry_Id = 1; //set default selected category
+            _dialog.DialogTitle = "Add book"; // change title dialog
             _dialog.Show(MainView.GetInstance());
         }
 

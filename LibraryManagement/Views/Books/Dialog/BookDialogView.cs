@@ -64,8 +64,8 @@ namespace LibraryManagement.Views.Books.Dialog
             set => publisher.Text = value; 
         }
         public int Categiry_Id { 
-            get => category.SelectedIndex; 
-            set => category.SelectedIndex = value; 
+            get => Convert.ToInt32(category.SelectedValue); 
+            set => category.SelectedValue = value; 
         }
         public string ErrorMessages
         {
@@ -116,13 +116,6 @@ namespace LibraryManagement.Views.Books.Dialog
             category.DataSource = categories.DataSource;
             category.DisplayMember = "Name";
             category.ValueMember = "Id";
-            //adap = new SqlDataAdapter("Select * from tblAuthor", conn);
-            //ds = new DataSet();
-
-            //adap.Fill(ds, "author");
-            //author.DataSource = ds.Tables["author"];
-            //author.DisplayMember = "AuthorName";
-            //author.ValueMember = "AuthorID";
         }
     }
 }

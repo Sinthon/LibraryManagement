@@ -88,6 +88,7 @@ namespace LibraryManagement.Views.Books.Dialog
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(142, 21);
             this.category.TabIndex = 11;
+            //this.category.SelectedIndexChanged += new System.EventHandler(this.category_SelectedIndexChanged);
             // 
             // cancel
             // 
