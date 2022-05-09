@@ -16,23 +16,26 @@ namespace LibraryManagement.Presenters
     public class BookPresenter
     {
         private ModelDataValidation validation;
-
+        
         private IBookView _bookview;
         private IBookDailog _dialog;
         private IBookRepository _repository;
 
-        private ICategoryRepository categoryRepository;
+        ICategoryRepository categoryRepository;
 
         private BindingSource booksBindingSource;
         private IEnumerable<BookModel> booklist;
 
+        private BindingSource categoryBindingSource;
+        private IEnumerable<CategoryModel> categorylist;
+
         BookPresenter(IBookView _bookview, IBookDailog _dialog, IBookRepository _repository, ICategoryRepository categoryRepository)
         {
             booksBindingSource = new BindingSource();
-            this.categoryRepository = categoryRepository;
-
+            categoryBindingSource = new BindingSource();
             validation = new ModelDataValidation();
 
+            this.categoryRepository = categoryRepository;
             this._bookview = _bookview;
             this._dialog = _dialog;
             this._repository = _repository;
@@ -101,7 +104,8 @@ namespace LibraryManagement.Presenters
 
         private void AddBook(object sender, EventArgs e)
         {
-            var categorylist = categoryRepository.GetAll();
+            categorylist = categoryRepository.GetAll();
+            categoryBindingSource.DataSource = categorylist;
 
             _dialog.IsEdit = false;
             _dialog.DialogTitle = "Add book";
@@ -144,7 +148,7 @@ namespace LibraryManagement.Presenters
         {
             if(instance== null)
             {
-                instance = new BookPresenter(_bookview, _dialog, _repository, categoryRepository);
+                instance = new BookPresenter(_bookview, _dialog, _repository,categoryRepository);
             }
             return instance;
         }

@@ -45,7 +45,7 @@ namespace LibraryManagement.Repositories
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine(reader[0].ToString()+ reader[1].ToString()+ reader[2].ToString());
+                        //Console.WriteLine(reader[0].ToString()+ reader[1].ToString()+ reader[2].ToString());
                         var model = new CategoryModel();
                         model.Id = Convert.ToInt32(reader[0]);
                         model.Name = reader[1].ToString();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,8 +64,8 @@ namespace LibraryManagement.Views.Books.Dialog
             set => publisher.Text = value; 
         }
         public int Categiry_Id { 
-            get => category_id.SelectedIndex; 
-            set => category_id.SelectedIndex = value; 
+            get => category.SelectedIndex; 
+            set => category.SelectedIndex = value; 
         }
         public string ErrorMessages
         {
@@ -110,10 +111,17 @@ namespace LibraryManagement.Views.Books.Dialog
             this.ShowDialog(parent);
         }
 
-        public void AuthorsBindingSource(BindingSource authors)
+        public void CategoriessBindingSource(BindingSource categories)
         {
-            category_id.DataSource = authors.DataSource;
+            foreach(var item in categories)
+            {
+                //Console.WriteLine(item.ToString());
+            }
 
+            //List<CategoryModel> category = categories.DataSource;
+            //category.DataSource = categories.DataSource;
+            //category.DisplayMember = "CATEGORY NAME";
+            //category.ValueMember = "CATEGORY ID";
             //adap = new SqlDataAdapter("Select * from tblAuthor", conn);
             //ds = new DataSet();
 

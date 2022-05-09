@@ -40,7 +40,7 @@ namespace LibraryManagement.Models
         public string Publisher { get => publisher; set => publisher = value; }
 
         [DisplayName("CATEGORY ID")]
-        [Required(ErrorMessage = "Title is requerid")]
+        [Required(ErrorMessage = "Categoty is requerid")]
         public int Category_id { get => category_id; set => category_id = value; }
 
         [DisplayName("CATEGORY")]

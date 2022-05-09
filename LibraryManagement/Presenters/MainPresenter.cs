@@ -71,8 +71,8 @@ namespace LibraryManagement.Presenters
             IBookView bookview = BookView.GetInstace((Form)_mainview);
             IBookDailog dailog = BookDialogView.GetInstance();
 
-            IBookRepository repository = new BookRepository(connectionString);
             ICategoryRepository categoryRepository = CategoryRepository.GetInstance(connectionString);
+            IBookRepository repository = new BookRepository(connectionString);
 
             BookPresenter.GetInstance(bookview,dailog,repository, categoryRepository);
             bookview.Show();

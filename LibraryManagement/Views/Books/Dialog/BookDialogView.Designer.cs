@@ -32,7 +32,7 @@ namespace LibraryManagement.Views.Books.Dialog
             this.panel1 = new System.Windows.Forms.Panel();
             this.dialogtitle = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
-            this.category_id = new System.Windows.Forms.ComboBox();
+            this.category = new System.Windows.Forms.ComboBox();
             this.cancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,13 +81,13 @@ namespace LibraryManagement.Views.Books.Dialog
             this.id.Text = "0";
             this.id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_KeyPress);
             // 
-            // category_id
+            // category
             // 
-            this.category_id.FormattingEnabled = true;
-            this.category_id.Location = new System.Drawing.Point(87, 178);
-            this.category_id.Name = "category_id";
-            this.category_id.Size = new System.Drawing.Size(142, 21);
-            this.category_id.TabIndex = 11;
+            this.category.FormattingEnabled = true;
+            this.category.Location = new System.Drawing.Point(87, 178);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(142, 21);
+            this.category.TabIndex = 11;
             // 
             // cancel
             // 
@@ -238,7 +238,7 @@ namespace LibraryManagement.Views.Books.Dialog
             this.Controls.Add(this.label7);
             this.Controls.Add(this.id);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.category_id);
+            this.Controls.Add(this.category);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
@@ -265,7 +265,7 @@ namespace LibraryManagement.Views.Books.Dialog
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label dialogtitle;
         private System.Windows.Forms.TextBox id;
-        private System.Windows.Forms.ComboBox category_id;
+        private System.Windows.Forms.ComboBox category;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

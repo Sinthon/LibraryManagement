@@ -26,7 +26,7 @@ namespace LibraryManagement.Views.Books.Dialog
         event EventHandler Save;
         event EventHandler Cancel;
 
-        void AuthorsBindingSource(BindingSource authors);
+        void CategoriessBindingSource(BindingSource categories);
 
         void Show(Form parentContainer);
         void Hide();
