@@ -46,8 +46,8 @@ namespace LibraryManagement.Views.Books.Dialog
             this.label7 = new System.Windows.Forms.Label();
             this.publisher = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
-            this.ErrorMessage = new System.Windows.Forms.Label();
             this.publish_date = new System.Windows.Forms.DateTimePicker();
+            this.ErrorMessage = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,16 +206,6 @@ namespace LibraryManagement.Views.Books.Dialog
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
             // 
-            // ErrorMessage
-            // 
-            this.ErrorMessage.AutoSize = true;
-            this.ErrorMessage.BackColor = System.Drawing.Color.Transparent;
-            this.ErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.ErrorMessage.Location = new System.Drawing.Point(19, 210);
-            this.ErrorMessage.Name = "ErrorMessage";
-            this.ErrorMessage.Size = new System.Drawing.Size(0, 13);
-            this.ErrorMessage.TabIndex = 13;
-            // 
             // publish_date
             // 
             this.publish_date.AccessibleRole = System.Windows.Forms.AccessibleRole.PropertyPage;
@@ -224,13 +214,24 @@ namespace LibraryManagement.Views.Books.Dialog
             this.publish_date.Size = new System.Drawing.Size(142, 20);
             this.publish_date.TabIndex = 14;
             // 
+            // ErrorMessage
+            // 
+            this.ErrorMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ErrorMessage.ForeColor = System.Drawing.Color.Red;
+            this.ErrorMessage.Location = new System.Drawing.Point(19, 214);
+            this.ErrorMessage.Name = "ErrorMessage";
+            this.ErrorMessage.ReadOnly = true;
+            this.ErrorMessage.Size = new System.Drawing.Size(210, 52);
+            this.ErrorMessage.TabIndex = 15;
+            this.ErrorMessage.Text = "";
+            // 
             // BookDialogView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 321);
-            this.Controls.Add(this.publish_date);
             this.Controls.Add(this.ErrorMessage);
+            this.Controls.Add(this.publish_date);
             this.Controls.Add(this.publisher);
             this.Controls.Add(this.type);
             this.Controls.Add(this.page);
@@ -279,7 +280,7 @@ namespace LibraryManagement.Views.Books.Dialog
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox publisher;
         private System.Windows.Forms.Button save;
-        private System.Windows.Forms.Label ErrorMessage;
         private System.Windows.Forms.DateTimePicker publish_date;
+        private System.Windows.Forms.RichTextBox ErrorMessage;
     }
 }

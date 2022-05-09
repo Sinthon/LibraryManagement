@@ -146,6 +146,13 @@
     </Compile>
     <Compile Include="Views\Books\Dialog\IBookDailog.cs" />
     <Compile Include="Views\Books\IBookView.cs" />
+    <Compile Include="Views\Category\CategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Category\CategoryView.Designer.cs">
+      <DependentUpon>CategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\ICategoryView.cs" />
     <Compile Include="Views\Dashboard\DashboardView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Books\Dialog\BookDialogView.resx">
       <DependentUpon>BookDialogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Category\CategoryView.resx">
+      <DependentUpon>CategoryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardView.resx">
       <DependentUpon>DashboardView.cs</DependentUpon>

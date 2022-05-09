@@ -12,6 +12,7 @@ using LibraryManagement.Views.Books.Dialog;
 using LibraryManagement.Models;
 using LibraryManagement.Repositories;
 using LibraryManagement.Views.Dashboard;
+using LibraryManagement.Views.Category;
 
 namespace LibraryManagement.Presenters
 {
@@ -33,6 +34,7 @@ namespace LibraryManagement.Presenters
             _sideBar.ShowDahsBoard += ShowDashboard;
             _sideBar.ShowBooks += ShowBook;
             _sideBar.ShowAuthor += ShowAuthor;
+            _sideBar.ShowCategory += ShowCategory;
         }
 
         private void SetUp(object sender, EventArgs e)
@@ -82,6 +84,15 @@ namespace LibraryManagement.Presenters
         {
             _dashboard = DashboardView.GetInstace((Form)_mainview);
             _dashboard.Show();
+        }
+
+        private void ShowCategory(object sender, EventArgs e)
+        {
+            ICategoryView catview = CategoryView.GetInstace((Form)_mainview);
+            ICategoryRepository categoryRepository = CategoryRepository.GetInstance(connectionString);
+
+            CategoryPresenter.GetInstance(categoryRepository, catview);
+            catview.Show();
         }
     }
 }

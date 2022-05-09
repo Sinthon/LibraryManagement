@@ -45,12 +45,17 @@ namespace LibraryManagement.Presenters
             _bookview.Edit += EditBook;
             _bookview.Delete += DeleteBook;
             _bookview.Load += ReloadList;
-
+            _bookview.CloseForm += CloseForm;
             _dialog.Save += Save;
             _dialog.Cancel += Cancel;
             _bookview.SetBookListBindingSource(booksBindingSource);
 
             SetUp();
+        }
+
+        private void CloseForm(object sender, EventArgs e)
+        {
+            //_bookview.Close();
         }
 
         private void Cancel(object sender, EventArgs e)
@@ -107,6 +112,7 @@ namespace LibraryManagement.Presenters
             categorylist = categoryRepository.GetAll();
             categoryBindingSource.DataSource = categorylist;
 
+            _dialog.CategoriessBindingSource(categoryBindingSource);
             _dialog.IsEdit = false;
             _dialog.DialogTitle = "Add book";
             _dialog.Show(MainView.GetInstance());

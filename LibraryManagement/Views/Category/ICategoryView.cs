@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryManagement.Views.Books
+namespace LibraryManagement.Views.Category
 {
-    public interface IBookView
+    public interface ICategoryView
     {
         string sValue { get; set; }
 
@@ -16,10 +16,9 @@ namespace LibraryManagement.Views.Books
         event EventHandler Edit;
         event EventHandler Delete;
         event EventHandler Load;
-        event EventHandler CloseForm;
 
-        void SetBookListBindingSource(BindingSource bindingSource);
+        void SetBindingSource(BindingSource bindingSource);
         void Show();
-        void Close();
+
     }
 }

@@ -113,15 +113,9 @@ namespace LibraryManagement.Views.Books.Dialog
 
         public void CategoriessBindingSource(BindingSource categories)
         {
-            foreach(var item in categories)
-            {
-                //Console.WriteLine(item.ToString());
-            }
-
-            //List<CategoryModel> category = categories.DataSource;
-            //category.DataSource = categories.DataSource;
-            //category.DisplayMember = "CATEGORY NAME";
-            //category.ValueMember = "CATEGORY ID";
+            category.DataSource = categories.DataSource;
+            category.DisplayMember = "Name";
+            category.ValueMember = "Id";
             //adap = new SqlDataAdapter("Select * from tblAuthor", conn);
             //ds = new DataSet();
 

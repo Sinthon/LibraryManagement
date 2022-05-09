@@ -8,24 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryManagement.Views.Books
+namespace LibraryManagement.Views.Category
 {
-    public partial class BookView : Form, IBookView
+    public partial class CategoryView : Form, ICategoryView
     {
-        public BookView()
+        public CategoryView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
         }
 
-        private static BookView instance;
+        private static CategoryView instance;
         public event EventHandler Search;
         public event EventHandler Add;
         public event EventHandler Edit;
         public event EventHandler Delete;
         public event EventHandler Load;
-        public event EventHandler CloseForm;
-
         private void AssociateAndRaiseViewEvents()
         {
             add.Click += delegate
@@ -40,10 +38,6 @@ namespace LibraryManagement.Views.Books
             {
                 Load?.Invoke(this, EventArgs.Empty);
             };
-            close.Click += delegate
-            {
-                CloseForm?.Invoke(this, EventArgs.Empty);
-            };
         }
 
         public string sValue {
@@ -52,11 +46,11 @@ namespace LibraryManagement.Views.Books
         }
 
 
-        public static BookView GetInstace(Form parentContainer)
+        public static CategoryView GetInstace(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new BookView();
+                instance = new CategoryView();
                 instance.MdiParent = parentContainer;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
@@ -70,7 +64,7 @@ namespace LibraryManagement.Views.Books
             return instance;
         }
 
-        public void SetBookListBindingSource(BindingSource bindingSource)
+        public void SetBindingSource(BindingSource bindingSource)
         {
             dataGridView1.DataSource = bindingSource;
         }
