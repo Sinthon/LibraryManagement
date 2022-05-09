@@ -40,6 +40,29 @@ namespace LibraryManagement.Views.Dashboard
 
         private static DashboardView instance;
 
+        public string Company_name { 
+            get => campany_name.Text; 
+            set => campany_name.Text = value.ToUpper(); 
+        }
+        public string Company_email { 
+            get => company_email.Text; 
+            set => company_email.Text = value; 
+        }
+        public string Company_phone { 
+            get => company_phone.Text; 
+            set => company_phone.Text = value; 
+        }
+        public string Company_address {
+            get => company_address.Text; 
+            set => company_address.Text = value; 
+        }
+
+        public string Company_website
+        {
+            get => comapany_website.Text;
+            set => comapany_website.Text = value;
+        }
+
         public event EventHandler ShowBooks;
         public event EventHandler ShowBorrow;
         public event EventHandler ShowReturn;

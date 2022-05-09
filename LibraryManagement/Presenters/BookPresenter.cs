@@ -79,6 +79,7 @@ namespace LibraryManagement.Presenters
                 try
                 {
                     validation.Validate(model);
+                    _repository.Edit(model);
                     _dialog.Hide();
                 }
                 catch (Exception ex)
@@ -91,6 +92,7 @@ namespace LibraryManagement.Presenters
                 try
                 {
                     validation.Validate(model);
+                    _repository.Add(model);
                     _dialog.Hide();
                 }
                 catch (Exception ex)

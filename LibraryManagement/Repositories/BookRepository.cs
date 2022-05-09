@@ -21,18 +21,14 @@ namespace LibraryManagement.Repositories
 
         public void Add(BookModel model)
         {
-            string sql = "";
-            if (File.Exists(@"Commands\pAddBook.sql)"))
-                sql = File.ReadAllText(@"Commands\pAddBook.sql");
-            else
-                sql = "PROC_ADDBOOK";
-
+            string sql = File.ReadAllText(@"Commands\pAddBook.sql");
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = sql;
+                command.CommandType = CommandType.Text;
                 command.Parameters.Add(new OracleParameter("ID", model.Id));
                 command.Parameters.Add(new OracleParameter("TITLE", model.Title));
                 command.Parameters.Add(new OracleParameter("PAGE", model.Page));
@@ -52,8 +48,8 @@ namespace LibraryManagement.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM TBLBOOK  WHERE BOOKID= :1";
-                command.Parameters.Add(new OracleParameter("1", OracleDbType.Int32)).Value = id;
+                command.CommandText = "DELETE FROM TBLBOOK  WHERE BOOKID= :ID";
+                command.Parameters.Add(new OracleParameter("ID", OracleDbType.Int32)).Value = id;
                 command.ExecuteNonQuery();
                 connection.Close();
             }
