@@ -56,7 +56,7 @@ namespace LibraryManagement.Views.Author
             }
             return instance;
         }
-        public void SetAuthorListBindingSource(BindingSource bindingSource)
+        public void SetBindingSource(BindingSource bindingSource)
         {
             dataGridView1.DataSource = bindingSource;
         }

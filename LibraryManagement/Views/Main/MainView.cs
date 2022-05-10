@@ -15,7 +15,6 @@ namespace LibraryManagement.Views.Main
 {
     public partial class MainView : Form, IMainView
     {
-        private ISideBarMenu sidebar;
 
         public MainView()
         {
@@ -60,8 +59,6 @@ namespace LibraryManagement.Views.Main
         {   
             this.Controls.Add(SideBarMenu.GetInstance());
             this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
-
             this.MainMenuStrip = this.menuStrip1;
         }
 

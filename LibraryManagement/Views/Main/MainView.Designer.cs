@@ -66,6 +66,7 @@ namespace LibraryManagement.Views.Main
             this.ClientSize = new System.Drawing.Size(835, 720);
             this.Name = "MainView";
             this.Text = "LibraryMangement";
+            this.IsMdiContainer = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResizeEnd += new System.EventHandler(this.Event_ResizeEnd);
             this.menuStrip1.ResumeLayout(false);

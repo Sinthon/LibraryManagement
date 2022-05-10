@@ -52,7 +52,7 @@ namespace LibraryManagement.Presenters
             try
             {
                 validation.Validate(model);
-                //_repository.Login(model);
+                _repository.Login(model);
                 _loginview.LoginSuccess = true;
                 if (_loginview.RememberMe)
                 {

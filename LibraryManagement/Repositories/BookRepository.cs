@@ -86,12 +86,14 @@ namespace LibraryManagement.Repositories
                         model.Id = (int)reader[0];
                         model.Title = reader[1].ToString();
                         model.Page = (int)reader[2];
-                        //model.Publisdate = (DateTime)reader[3];
-                        model.Publisher = reader[4].ToString();
-                        //model.Category_id = (int)reader[5];
-                        model.Category_name = reader[6].ToString();
-                        model.Category_description = reader[7].ToString();
+                        model.Type = reader[3].ToString();
+                        model.Publisdate = (DateTime)reader[4];
+                        model.Publisher = reader[5].ToString();
+                        model.Category_id = (int)reader[6];
+                        model.Category_name = reader[7].ToString();
+                        model.Category_description = reader[8].ToString();
                         booklist.Add(model);
+                        Console.WriteLine(reader[5].ToString());
                     }
                 }
                 connecion.Close();

@@ -13,6 +13,8 @@ using LibraryManagement.Models;
 using LibraryManagement.Repositories;
 using LibraryManagement.Views.Dashboard;
 using LibraryManagement.Views.Category;
+using LibraryManagement.Views.Author;
+using LibraryManagement.Views.Author.Dialog;
 
 namespace LibraryManagement.Presenters
 {
@@ -65,7 +67,12 @@ namespace LibraryManagement.Presenters
 
         private void ShowAuthor(object sender, EventArgs e)
         {
-            MessageBox.Show("We are still working on it.");
+            IAuthorView authorview = AuthorView.GetInstace((Form)_mainview);
+            IAuthorRepository authorRepository = AuthorRepository.GetInstance(connectionString);
+            IAuthorDialog authordialog = AuthorDialog.GetInstance();
+
+            AuthorPresenter.GetInstance(authorview, authordialog, authorRepository);
+            authorview.Show();
         }
 
         private void ShowBook(object sender, EventArgs e)

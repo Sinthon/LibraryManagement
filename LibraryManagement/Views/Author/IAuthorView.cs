@@ -17,7 +17,7 @@ namespace LibraryManagement.Views.Author
         event EventHandler Delete;
         event EventHandler Load;
 
-        void SetAuthorListBindingSource(BindingSource petList);
+        void SetBindingSource(BindingSource petList);
         void Show();
     }
 }

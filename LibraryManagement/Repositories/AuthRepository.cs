@@ -18,21 +18,18 @@ namespace LibraryManagement.Repositories
         }
 
         public void Login(AuthModel model)
-        {
+        {   
             using (OracleConnection connection = new OracleConnection(connectionString))
             using (OracleCommand command = new OracleCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"select * from TBLLIBRARIAN where LIB_EMAIL= :email and LIB_Password= :password";
+                command.CommandText = "SELECT LIB_EMAIL,LIB_PWD FROM TBLLIBRARIAN WHERE LIB_EMAIL= :email AND LIB_PWD= :password";
                 command.Parameters.Add(new OracleParameter("email", model.Email));
                 command.Parameters.Add(new OracleParameter("password", model.Password));
                 using (var reader = command.ExecuteReader())
                 {
-                    while (reader.Read())
-                    {
-                        Console.WriteLine(reader[1].ToString());
-                    }
+                    if (!reader.Read()) throw new Exception("Password khos hx");
                 }
             }
         }
