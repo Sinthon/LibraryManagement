@@ -132,6 +132,8 @@
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\IBookRepository.cs" />
     <Compile Include="Models\ICategoryRepository.cs" />
+    <Compile Include="Models\ILibraryRepository.cs" />
+    <Compile Include="Models\LibraryModel.cs" />
     <Compile Include="Presenters\AuthorPresenter.cs" />
     <Compile Include="Presenters\BookPresenter.cs" />
     <Compile Include="Presenters\CategoryPresenter.cs" />
@@ -143,6 +145,7 @@
     <Compile Include="Repositories\AuthRepository.cs" />
     <Compile Include="Repositories\BookRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\LibraryRepository.cs" />
     <Compile Include="Views\Author\AuthorView.cs">
       <SubType>Form</SubType>
     </Compile>

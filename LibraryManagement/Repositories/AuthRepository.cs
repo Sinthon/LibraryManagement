@@ -24,13 +24,14 @@ namespace LibraryManagement.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT LIB_EMAIL,LIB_PWD FROM TBLLIBRARIAN WHERE LIB_EMAIL= :email AND LIB_PWD= :password";
+                command.CommandText = "SELECT * FROM TBLLIBRARIAN WHERE LIB_EMAIL= :email AND LIB_PWD= :password";
                 command.Parameters.Add(new OracleParameter("email", model.Email));
                 command.Parameters.Add(new OracleParameter("password", model.Password));
                 using (var reader = command.ExecuteReader())
                 {
-                    if (!reader.Read()) throw new Exception("Password khos hx");
+                    if (!reader.Read()) throw new Exception("The email or password you entered did not match our record.");
                 }
+                connection.Close();
             }
         }
     }

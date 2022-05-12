@@ -21,7 +21,12 @@ namespace LibraryManagement.Repositories
 
         public void Add(BookModel model)
         {
-            string sql = File.ReadAllText(@"Commands\pAddBook.sql");
+            string sql = "";
+            if (File.Exists(@"Commands\pAddBook.sql"))
+                sql = File.ReadAllText(@"Commands\pAddBook.sql");
+            else
+                sql = "INSERT INTO TBLBOOK VALUES(:ID, :TITLE, :PAGE, :TYPE, :PUBLISHDATE,:PUBLISHER,:CATEGOTY_ID);";
+
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {

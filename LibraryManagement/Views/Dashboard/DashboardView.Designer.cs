@@ -34,6 +34,11 @@ namespace LibraryManagement.Views.Dashboard
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.company_address = new System.Windows.Forms.RichTextBox();
+            this.comapany_website = new System.Windows.Forms.TextBox();
+            this.company_phone = new System.Windows.Forms.TextBox();
+            this.company_email = new System.Windows.Forms.TextBox();
+            this.campany_name = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,19 +50,14 @@ namespace LibraryManagement.Views.Dashboard
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.campany_name = new System.Windows.Forms.TextBox();
-            this.company_email = new System.Windows.Forms.TextBox();
-            this.company_phone = new System.Windows.Forms.TextBox();
-            this.comapany_website = new System.Windows.Forms.TextBox();
-            this.company_address = new System.Windows.Forms.RichTextBox();
             this.Author = new LibraryManagement.Controls.CustomButton();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.Return = new LibraryManagement.Controls.CustomButton();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.Borrow = new LibraryManagement.Controls.CustomButton();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.Book = new LibraryManagement.Controls.CustomButton();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
@@ -124,6 +124,71 @@ namespace LibraryManagement.Views.Dashboard
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(439, 606);
             this.panel5.TabIndex = 26;
+            // 
+            // company_address
+            // 
+            this.company_address.BackColor = System.Drawing.SystemColors.Control;
+            this.company_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.company_address.Enabled = false;
+            this.company_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.company_address.Location = new System.Drawing.Point(112, 439);
+            this.company_address.Name = "company_address";
+            this.company_address.ReadOnly = true;
+            this.company_address.Size = new System.Drawing.Size(233, 66);
+            this.company_address.TabIndex = 3;
+            this.company_address.Text = "";
+            // 
+            // comapany_website
+            // 
+            this.comapany_website.BackColor = System.Drawing.SystemColors.Control;
+            this.comapany_website.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.comapany_website.Enabled = false;
+            this.comapany_website.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comapany_website.Location = new System.Drawing.Point(112, 402);
+            this.comapany_website.Name = "comapany_website";
+            this.comapany_website.Size = new System.Drawing.Size(233, 16);
+            this.comapany_website.TabIndex = 1;
+            this.comapany_website.Text = "sample.com.kh";
+            this.comapany_website.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // company_phone
+            // 
+            this.company_phone.BackColor = System.Drawing.SystemColors.Control;
+            this.company_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.company_phone.Enabled = false;
+            this.company_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.company_phone.Location = new System.Drawing.Point(112, 371);
+            this.company_phone.Name = "company_phone";
+            this.company_phone.Size = new System.Drawing.Size(233, 16);
+            this.company_phone.TabIndex = 1;
+            this.company_phone.Text = "85524563434";
+            this.company_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // company_email
+            // 
+            this.company_email.BackColor = System.Drawing.SystemColors.Control;
+            this.company_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.company_email.Enabled = false;
+            this.company_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.company_email.Location = new System.Drawing.Point(112, 335);
+            this.company_email.Name = "company_email";
+            this.company_email.Size = new System.Drawing.Size(233, 16);
+            this.company_email.TabIndex = 1;
+            this.company_email.Text = "sample@gmail.com";
+            this.company_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // campany_name
+            // 
+            this.campany_name.BackColor = System.Drawing.SystemColors.Control;
+            this.campany_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.campany_name.Enabled = false;
+            this.campany_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campany_name.Location = new System.Drawing.Point(112, 302);
+            this.campany_name.Name = "campany_name";
+            this.campany_name.Size = new System.Drawing.Size(233, 16);
+            this.campany_name.TabIndex = 1;
+            this.campany_name.Text = "SAMPLE COMPANY";
+            this.campany_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -236,106 +301,6 @@ namespace LibraryManagement.Views.Dashboard
             this.panel13.Size = new System.Drawing.Size(156, 144);
             this.panel13.TabIndex = 3;
             // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.Return);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(327, 3);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(156, 144);
-            this.panel12.TabIndex = 2;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.Borrow);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(165, 3);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(156, 144);
-            this.panel11.TabIndex = 1;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.Book);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(156, 144);
-            this.panel10.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(648, 32);
-            this.panel9.TabIndex = 0;
-            // 
-            // campany_name
-            // 
-            this.campany_name.BackColor = System.Drawing.SystemColors.Control;
-            this.campany_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.campany_name.Enabled = false;
-            this.campany_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campany_name.Location = new System.Drawing.Point(112, 302);
-            this.campany_name.Name = "campany_name";
-            this.campany_name.Size = new System.Drawing.Size(233, 16);
-            this.campany_name.TabIndex = 1;
-            this.campany_name.Text = "SAMPLE COMPANY";
-            this.campany_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // company_email
-            // 
-            this.company_email.BackColor = System.Drawing.SystemColors.Control;
-            this.company_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.company_email.Enabled = false;
-            this.company_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.company_email.Location = new System.Drawing.Point(112, 335);
-            this.company_email.Name = "company_email";
-            this.company_email.Size = new System.Drawing.Size(233, 16);
-            this.company_email.TabIndex = 1;
-            this.company_email.Text = "SAMPLE COMPANY";
-            this.company_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // company_phone
-            // 
-            this.company_phone.BackColor = System.Drawing.SystemColors.Control;
-            this.company_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.company_phone.Enabled = false;
-            this.company_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.company_phone.Location = new System.Drawing.Point(112, 371);
-            this.company_phone.Name = "company_phone";
-            this.company_phone.Size = new System.Drawing.Size(233, 16);
-            this.company_phone.TabIndex = 1;
-            this.company_phone.Text = "SAMPLE COMPANY";
-            this.company_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // comapany_website
-            // 
-            this.comapany_website.BackColor = System.Drawing.SystemColors.Control;
-            this.comapany_website.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comapany_website.Enabled = false;
-            this.comapany_website.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comapany_website.Location = new System.Drawing.Point(112, 402);
-            this.comapany_website.Name = "comapany_website";
-            this.comapany_website.Size = new System.Drawing.Size(233, 16);
-            this.comapany_website.TabIndex = 1;
-            this.comapany_website.Text = "SAMPLE COMPANY";
-            this.comapany_website.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // company_address
-            // 
-            this.company_address.BackColor = System.Drawing.SystemColors.Control;
-            this.company_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.company_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.company_address.Location = new System.Drawing.Point(112, 439);
-            this.company_address.Name = "company_address";
-            this.company_address.ReadOnly = true;
-            this.company_address.Size = new System.Drawing.Size(233, 66);
-            this.company_address.TabIndex = 3;
-            this.company_address.Text = "";
-            // 
             // Author
             // 
             this.Author.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -357,6 +322,15 @@ namespace LibraryManagement.Views.Dashboard
             this.Author.Text = "AUTHORS";
             this.Author.TextColor = System.Drawing.Color.DimGray;
             this.Author.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.Return);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(327, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(156, 144);
+            this.panel12.TabIndex = 2;
             // 
             // Return
             // 
@@ -380,6 +354,15 @@ namespace LibraryManagement.Views.Dashboard
             this.Return.TextColor = System.Drawing.Color.DimGray;
             this.Return.UseVisualStyleBackColor = false;
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.Borrow);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(165, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(156, 144);
+            this.panel11.TabIndex = 1;
+            // 
             // Borrow
             // 
             this.Borrow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -402,6 +385,15 @@ namespace LibraryManagement.Views.Dashboard
             this.Borrow.TextColor = System.Drawing.Color.DimGray;
             this.Borrow.UseVisualStyleBackColor = false;
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.Book);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(156, 144);
+            this.panel10.TabIndex = 0;
+            // 
             // Book
             // 
             this.Book.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -423,6 +415,15 @@ namespace LibraryManagement.Views.Dashboard
             this.Book.Text = "BOOKS";
             this.Book.TextColor = System.Drawing.Color.DimGray;
             this.Book.UseVisualStyleBackColor = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(648, 32);
+            this.panel9.TabIndex = 0;
             // 
             // DashboardView
             // 

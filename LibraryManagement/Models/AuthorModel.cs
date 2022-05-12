@@ -16,14 +16,14 @@ namespace LibraryManagement.Models
         private string skill;
 
         [DisplayName("ID")]
-        [Required(ErrorMessage = "ID is requerid")]
+        [Required(ErrorMessage = "Id is requerid")]
         public int Id { 
             get => id; 
             set => id = value; 
         }
 
         [DisplayName("NAME")]
-        [Required(ErrorMessage = "NAME is requerid")]
+        [Required(ErrorMessage = "Name is requerid")]
         public string Name { 
             get => name; 
             set => name = value; 
