@@ -68,6 +68,7 @@ namespace LibraryManagement.Views.Login
             if (instance == null || instance.IsDisposed)
             {
                 instance = new LoginView();
+                instance.ShowInTaskbar = false;
             }
             return instance;
         }

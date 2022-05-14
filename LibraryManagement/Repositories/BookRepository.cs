@@ -62,7 +62,24 @@ namespace LibraryManagement.Repositories
 
         public void Edit(BookModel model)
         {
-            
+            var sql = "INSERT INTO TBLBOOK VALUES(:ID, :TITLE, :PAGE, :TYPE, :PUBLISHDATE,:PUBLISHER,:CATEGOTY_ID);";
+            using (var connection = new OracleConnection(connectionString))
+            using (var command = new OracleCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = sql;
+                command.CommandType = CommandType.Text;
+                command.Parameters.Add(new OracleParameter("ID", model.Id));
+                command.Parameters.Add(new OracleParameter("TITLE", model.Title));
+                command.Parameters.Add(new OracleParameter("PAGE", model.Page));
+                command.Parameters.Add(new OracleParameter("TYPE", model.Type));
+                command.Parameters.Add(new OracleParameter("PUBLISHDATE", model.Publisdate));
+                command.Parameters.Add(new OracleParameter("PUBLISHER", model.Publisher));
+                command.Parameters.Add(new OracleParameter("CATEGOTY_ID", model.Category_id));
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         public IEnumerable<BookModel> GetAll()

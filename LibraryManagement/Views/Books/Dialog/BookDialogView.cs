@@ -97,11 +97,12 @@ namespace LibraryManagement.Views.Books.Dialog
             if(instance == null || instance.IsDisposed)
             {
                 instance = new BookDialogView();
+                instance.ShowInTaskbar = false;
             }
             return instance;
         }
 
-        private void id_KeyPress(object sender, KeyPressEventArgs e)
+        private void KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar);
         }

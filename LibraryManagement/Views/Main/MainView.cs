@@ -58,8 +58,7 @@ namespace LibraryManagement.Views.Main
         public void IitialComponent()
         {   
             this.Controls.Add(SideBarMenu.GetInstance());
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            
         }
 
         public event EventHandler SetUp;

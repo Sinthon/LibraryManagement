@@ -49,6 +49,10 @@ namespace LibraryManagement.Views.Layout
             {
                 ShowReturnBook?.Invoke(this, EventArgs.Empty);
             };
+            librarian.Click += delegate
+            {
+                ShowLibrarian.Invoke(this, EventArgs.Empty);
+            };
         }
 
         private static SideBarMenu instance;
@@ -60,6 +64,11 @@ namespace LibraryManagement.Views.Layout
                 instance.Dock = DockStyle.Left;
             }
             return instance;
+        }
+
+        void ISideBarMenu.Visible(bool visible)
+        {
+            this.Visible = visible;
         }
 
         public event EventHandler ShowDahsBoard;

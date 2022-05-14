@@ -10,5 +10,6 @@ namespace LibraryManagement.Views.Main
     {
         event EventHandler SetUp;
         void IitialComponent();
+        void Close();
     }
 }

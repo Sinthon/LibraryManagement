@@ -114,6 +114,7 @@ namespace LibraryManagement.Views.Login
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.errorMeesage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.errorMeesage.Enabled = false;
             this.errorMeesage.ForeColor = System.Drawing.Color.Red;
             this.errorMeesage.Location = new System.Drawing.Point(15, 115);
             this.errorMeesage.Name = "errorMeesage";

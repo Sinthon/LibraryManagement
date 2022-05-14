@@ -79,7 +79,7 @@ namespace LibraryManagement.Views.Books.Dialog
             this.id.Size = new System.Drawing.Size(142, 20);
             this.id.TabIndex = 12;
             this.id.Text = "0";
-            this.id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_KeyPress);
+            this.id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // category
             // 
@@ -88,7 +88,6 @@ namespace LibraryManagement.Views.Books.Dialog
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(142, 21);
             this.category.TabIndex = 11;
-            //this.category.SelectedIndexChanged += new System.EventHandler(this.category_SelectedIndexChanged);
             // 
             // cancel
             // 
@@ -161,6 +160,7 @@ namespace LibraryManagement.Views.Books.Dialog
             this.page.Name = "page";
             this.page.Size = new System.Drawing.Size(142, 20);
             this.page.TabIndex = 12;
+            this.page.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // type
             // 

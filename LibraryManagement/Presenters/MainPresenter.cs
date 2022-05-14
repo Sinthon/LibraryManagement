@@ -15,6 +15,7 @@ using LibraryManagement.Views.Dashboard;
 using LibraryManagement.Views.Category;
 using LibraryManagement.Views.Author;
 using LibraryManagement.Views.Author.Dialog;
+using LibraryManagement.Views.Librarian;
 
 namespace LibraryManagement.Presenters
 {
@@ -37,6 +38,16 @@ namespace LibraryManagement.Presenters
             _sideBar.ShowBooks += ShowBook;
             _sideBar.ShowAuthor += ShowAuthor;
             _sideBar.ShowCategory += ShowCategory;
+            _sideBar.ShowLibrarian += ShowLibrarian;
+        }
+
+        private void ShowLibrarian(object sender, EventArgs e)
+        {
+            ILibrarianView librarianview = LibrarianView.GetInstace((Form)_mainview);
+            ILibrarianRepository repository = new LibrarianRepository(connectionString);
+
+            LibrarianPrecenter.GetInstance(librarianview, repository);
+            librarianview.Show();
         }
 
         private void SetUp(object sender, EventArgs e)
