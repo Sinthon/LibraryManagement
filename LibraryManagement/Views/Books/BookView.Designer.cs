@@ -113,11 +113,11 @@ namespace LibraryManagement.Views.Books
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(595, 13);
+            this.label2.Location = new System.Drawing.Point(588, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Author";
+            this.label2.Text = "Category";
             // 
             // label1
             // 

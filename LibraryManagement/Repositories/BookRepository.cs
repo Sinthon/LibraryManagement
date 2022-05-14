@@ -13,19 +13,17 @@ namespace LibraryManagement.Repositories
 {
     public class BookRepository : BaseRepository, IBookRepository
     {
-
         public BookRepository(string connectionString)
         {
             this.connectionString = connectionString;
         }
-
         public void Add(BookModel model)
         {
             string sql = "";
             if (File.Exists(@"Commands\pAddBook.sql"))
                 sql = File.ReadAllText(@"Commands\pAddBook.sql");
             else
-                sql = "INSERT INTO TBLBOOK VALUES(:ID, :TITLE, :PAGE, :TYPE, :PUBLISHDATE,:PUBLISHER,:CATEGOTY_ID);";
+                sql = @"INSERT INTO tblbook ( bookid, booktitle, bookpage, booktype, publishdate, publisher, categoryid) VALUES(:v0, :v1, :v2, :v3, :v4, :v5, :v6 );";
 
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
@@ -34,18 +32,17 @@ namespace LibraryManagement.Repositories
                 command.Connection = connection;
                 command.CommandText = sql;
                 command.CommandType = CommandType.Text;
-                command.Parameters.Add(new OracleParameter("ID", model.Id));
-                command.Parameters.Add(new OracleParameter("TITLE", model.Title));
-                command.Parameters.Add(new OracleParameter("PAGE", model.Page));
-                command.Parameters.Add(new OracleParameter("TYPE", model.Type));
-                command.Parameters.Add(new OracleParameter("PUBLISHDATE", model.Publisdate));
-                command.Parameters.Add(new OracleParameter("PUBLISHER", model.Publisher));
-                command.Parameters.Add(new OracleParameter("CATEGOTY_ID", model.Category_id));
+                command.Parameters.Add(new OracleParameter("v1", model.Id));
+                command.Parameters.Add(new OracleParameter("v2", model.Title));
+                command.Parameters.Add(new OracleParameter("v3", model.Page));
+                command.Parameters.Add(new OracleParameter("v4", model.Type));
+                command.Parameters.Add(new OracleParameter("v5", model.Publisdate));
+                command.Parameters.Add(new OracleParameter("v6", model.Publisher));
+                command.Parameters.Add(new OracleParameter("v7", model.Category_id));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
         }
-
         public void Delete(int id)
         {
             using (var connection = new OracleConnection(connectionString))
@@ -53,13 +50,12 @@ namespace LibraryManagement.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM TBLBOOK  WHERE BOOKID= :ID";
-                command.Parameters.Add(new OracleParameter("ID", OracleDbType.Int32)).Value = id;
+                command.CommandText = @"DELETE FROM tblbook WHERE bookid = :v1";
+                command.Parameters.Add(new OracleParameter("v1", id));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
         }
-
         public void Edit(BookModel model)
         {
             var sql = "INSERT INTO TBLBOOK VALUES(:ID, :TITLE, :PAGE, :TYPE, :PUBLISHDATE,:PUBLISHER,:CATEGOTY_ID);";
@@ -81,7 +77,6 @@ namespace LibraryManagement.Repositories
                 connection.Close();
             }
         }
-
         public IEnumerable<BookModel> GetAll()
         {
             string sql;
@@ -122,7 +117,6 @@ namespace LibraryManagement.Repositories
             }
             return booklist;
         }
-
         public IEnumerable<BookModel> GetByValue(string value)
         {
             var booklist = new List<BookModel>();

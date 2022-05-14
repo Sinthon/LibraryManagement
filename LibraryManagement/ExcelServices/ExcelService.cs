@@ -32,6 +32,13 @@ namespace LibraryManagement.ExcelServices
                 wb.SaveAs(folderPath + "DataGridViewExport.xlsx");
             }
         }
+
+        private static ExcelService instance;
+        public static ExcelService GetInstance()
+        {
+            if (instance == null) instance = new ExcelService();
+            return instance;
+        }
     }
 }
 

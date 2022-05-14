@@ -19,6 +19,7 @@ namespace LibraryManagement.Views.Books
         event EventHandler CloseForm;
 
         void SetBookListBindingSource(BindingSource bindingSource);
+        void CategoryBindingSource(BindingSource bindingSource);
         void Show();
         void Close();
     }

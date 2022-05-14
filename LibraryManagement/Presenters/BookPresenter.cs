@@ -51,6 +51,7 @@ namespace LibraryManagement.Presenters
             
             SetUp();
             _bookview.SetBookListBindingSource(booksBindingSource);
+            _bookview.CategoryBindingSource(categoryBindingSource);
         }
 
         private void CloseForm(object sender, EventArgs e)
@@ -121,8 +122,19 @@ namespace LibraryManagement.Presenters
 
         private void DeleteBook(object sender, EventArgs e)
         {
-            var single_record = (BookModel)booksBindingSource.Current;
-            MessageBox.Show(single_record.Id.ToString());
+            try
+            {
+                var single_record = (BookModel)booksBindingSource.Current;
+                _repository.Delete(single_record.Id);
+
+                booklist = _repository.GetAll();
+                booksBindingSource.DataSource = booklist;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void EditBook(object sender, EventArgs e)

@@ -114,5 +114,12 @@ namespace LibraryManagement.Views.Books
                 }
             }
         }
+
+        public void CategoryBindingSource(BindingSource bindingSource)
+        {
+            Filter.DataSource = bindingSource.DataSource;
+            Filter.DisplayMember = "Name";
+            Filter.ValueMember = "Id";
+        }
     }
 }
