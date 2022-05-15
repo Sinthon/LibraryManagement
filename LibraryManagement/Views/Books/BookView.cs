@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,6 +61,11 @@ namespace LibraryManagement.Views.Books
             set => txtSearch.Text = value;
         }
 
+        public int category_id
+        {
+            get => Convert.ToInt32(Filter.SelectedValue);
+            set => Filter.SelectedValue = value;
+        }
 
         public static BookView GetInstace(Form parentContainer)
         {
@@ -117,9 +123,16 @@ namespace LibraryManagement.Views.Books
 
         public void CategoryBindingSource(BindingSource bindingSource)
         {
+            var model = new CategoryModel();
+            model.Name = "All";
+            model.Id = 0;
+            model.Description = "";
+            bindingSource.Add(model);
+
             Filter.DataSource = bindingSource.DataSource;
             Filter.DisplayMember = "Name";
             Filter.ValueMember = "Id";
+            Filter.SelectedValue = 0;
         }
     }
 }

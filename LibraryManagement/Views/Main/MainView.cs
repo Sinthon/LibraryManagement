@@ -62,5 +62,10 @@ namespace LibraryManagement.Views.Main
         }
 
         public event EventHandler SetUp;
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

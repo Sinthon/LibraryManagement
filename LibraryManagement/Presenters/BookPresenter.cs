@@ -96,7 +96,17 @@ namespace LibraryManagement.Presenters
 
         private void ReloadList(object sender, EventArgs e)
         {
-            booklist = _repository.GetAll();
+            try
+            {
+                if (_bookview.category_id == 0)
+                    booklist = _repository.GetAll();
+                else
+                    booklist = _repository.GetByCategory(_bookview.category_id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             booksBindingSource.DataSource = booklist;
         }
 
@@ -157,15 +167,18 @@ namespace LibraryManagement.Presenters
         private void SearchBook(object sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(_bookview.sValue);
-            if (emptyValue == false)
+            try
             {
-                booklist = _repository.GetByValue(_bookview.sValue);
+                if (emptyValue == false)
+                    booklist = _repository.GetByValue(_bookview.sValue);
+                else
+                    booklist = _repository.GetAll();
             }
-            else
+            catch (Exception ex)
             {
-                booklist = _repository.GetAll();
-                booksBindingSource.DataSource = booklist;
+                MessageBox.Show(ex.Message);
             }
+            booksBindingSource.DataSource = booklist;
         }
 
         private static BookPresenter instance;

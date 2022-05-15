@@ -128,10 +128,9 @@ namespace LibraryManagement.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM TBLBOOK WHERE BOOKID=:ID OR BOOKTITLE LIKE :TITLE +'%'";
-
-                command.Parameters.Add(new OracleParameter(":ID", OracleDbType.Int32)).Value = id;
-                command.Parameters.Add(new OracleParameter(":TITLE", OracleDbType.NVarchar2)).Value = title;
+                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE BOOKID = :v1 OR BOOKTITLE LIKE '${title}'";
+                command.CommandType = CommandType.Text;
+                command.Parameters.Add(new OracleParameter("v1", id));
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -141,15 +140,52 @@ namespace LibraryManagement.Repositories
                         model.Id = (int)reader[0];
                         model.Title = reader[1].ToString();
                         model.Page = (int)reader[2];
-                        //model.Publisdate = (DateTime)reader[3];
-                        model.Publisher = reader[4].ToString();
-                        //model.Category_id = (int)reader[5];
-                        model.Category_name = reader[6].ToString();
-                        model.Category_description = reader[7].ToString();
+                        model.Type = reader[3].ToString();
+                        model.Publisdate = (DateTime)reader[4];
+                        model.Publisher = reader[5].ToString();
+                        model.Category_id = (int)reader[6];
+                        model.Category_name = reader[7].ToString();
+                        model.Category_description = reader[8].ToString();
                         booklist.Add(model);
+                        Console.WriteLine(reader[5].ToString());
                     }
+                    reader.Close();
                 }
                 connection.Close();
+            }
+            return booklist;
+        }
+
+        public IEnumerable<BookModel> GetByCategory(int category_id)
+        {
+
+            var booklist = new List<BookModel>();
+            using (OracleConnection connecion = new OracleConnection(connectionString))
+            using (OracleCommand command = new OracleCommand())
+            {
+                connecion.Open();
+                command.Connection = connecion;
+                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE CATEGORYID = :v1";
+                command.Parameters.Add(new OracleParameter("v1", category_id));
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var model = new BookModel();
+                        model.Id = (int)reader[0];
+                        model.Title = reader[1].ToString();
+                        model.Page = (int)reader[2];
+                        model.Type = reader[3].ToString();
+                        model.Publisdate = (DateTime)reader[4];
+                        model.Publisher = reader[5].ToString();
+                        model.Category_id = (int)reader[6];
+                        model.Category_name = reader[7].ToString();
+                        model.Category_description = reader[8].ToString();
+                        booklist.Add(model);
+                        Console.WriteLine(reader[5].ToString());
+                    }
+                }
+                connecion.Close();
             }
             return booklist;
         }

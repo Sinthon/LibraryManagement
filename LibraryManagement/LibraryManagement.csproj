@@ -141,6 +141,7 @@
     <Compile Include="Models\ICategoryRepository.cs" />
     <Compile Include="Models\ILibrarianRepository.cs" />
     <Compile Include="Models\ILibraryRepository.cs" />
+    <Compile Include="Models\IPrintFormRepository.cs" />
     <Compile Include="Models\LibrarianModel.cs" />
     <Compile Include="Models\LibraryModel.cs" />
     <Compile Include="Presenters\AuthorPresenter.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Presenters\LibrarianPrecenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\PrintFormPresenter.cs" />
     <Compile Include="Repositories\AuthorRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\AuthRepository.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\LibrarianRepository.cs" />
     <Compile Include="Repositories\LibraryRepository.cs" />
+    <Compile Include="Repositories\PrintFormRepository.cs" />
     <Compile Include="Views\Author\AuthorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,9 +314,7 @@
   <ItemGroup>
     <None Include="Resources\MicrosoftTeams-image.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PrintFormSerivce\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>

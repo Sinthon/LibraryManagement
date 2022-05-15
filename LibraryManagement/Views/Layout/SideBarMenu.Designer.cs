@@ -31,9 +31,6 @@ namespace LibraryManagement.Views.Layout
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.customButton2 = new LibraryManagement.Controls.CustomButton();
-            this.customButton1 = new LibraryManagement.Controls.CustomButton();
             this.librarian = new LibraryManagement.Controls.CustomButton();
             this.returnbook = new LibraryManagement.Controls.CustomButton();
             this.borrow = new LibraryManagement.Controls.CustomButton();
@@ -42,6 +39,9 @@ namespace LibraryManagement.Views.Layout
             this.author = new LibraryManagement.Controls.CustomButton();
             this.book = new LibraryManagement.Controls.CustomButton();
             this.dashboard = new LibraryManagement.Controls.CustomButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.customButton2 = new LibraryManagement.Controls.CustomButton();
+            this.customButton1 = new LibraryManagement.Controls.CustomButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +51,8 @@ namespace LibraryManagement.Views.Layout
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 46);
+            this.panel1.Size = new System.Drawing.Size(240, 37);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -68,62 +67,10 @@ namespace LibraryManagement.Views.Layout
             this.panel2.Controls.Add(this.book);
             this.panel2.Controls.Add(this.dashboard);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 46);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(320, 839);
+            this.panel2.Size = new System.Drawing.Size(240, 682);
             this.panel2.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.customButton2);
-            this.panel3.Controls.Add(this.customButton1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 734);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(320, 151);
-            this.panel3.TabIndex = 3;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.Transparent;
-            this.customButton2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton2.BorderRadius = 0;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.Black;
-            this.customButton2.Location = new System.Drawing.Point(0, 53);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(320, 49);
-            this.customButton2.TabIndex = 4;
-            this.customButton2.Text = "SETTINGS";
-            this.customButton2.TextColor = System.Drawing.Color.Black;
-            this.customButton2.UseVisualStyleBackColor = false;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.Transparent;
-            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderRadius = 0;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(0, 102);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(320, 49);
-            this.customButton1.TabIndex = 3;
-            this.customButton1.Text = "LOGOUT";
-            this.customButton1.TextColor = System.Drawing.Color.Black;
-            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // librarian
             // 
@@ -136,10 +83,9 @@ namespace LibraryManagement.Views.Layout
             this.librarian.FlatAppearance.BorderSize = 0;
             this.librarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.librarian.ForeColor = System.Drawing.Color.Black;
-            this.librarian.Location = new System.Drawing.Point(0, 343);
-            this.librarian.Margin = new System.Windows.Forms.Padding(4);
+            this.librarian.Location = new System.Drawing.Point(0, 280);
             this.librarian.Name = "librarian";
-            this.librarian.Size = new System.Drawing.Size(320, 49);
+            this.librarian.Size = new System.Drawing.Size(240, 40);
             this.librarian.TabIndex = 7;
             this.librarian.Text = "LIBRARIANS";
             this.librarian.TextColor = System.Drawing.Color.Black;
@@ -156,10 +102,9 @@ namespace LibraryManagement.Views.Layout
             this.returnbook.FlatAppearance.BorderSize = 0;
             this.returnbook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.returnbook.ForeColor = System.Drawing.Color.Black;
-            this.returnbook.Location = new System.Drawing.Point(0, 294);
-            this.returnbook.Margin = new System.Windows.Forms.Padding(4);
+            this.returnbook.Location = new System.Drawing.Point(0, 240);
             this.returnbook.Name = "returnbook";
-            this.returnbook.Size = new System.Drawing.Size(320, 49);
+            this.returnbook.Size = new System.Drawing.Size(240, 40);
             this.returnbook.TabIndex = 6;
             this.returnbook.Text = "RETURNS";
             this.returnbook.TextColor = System.Drawing.Color.Black;
@@ -176,10 +121,9 @@ namespace LibraryManagement.Views.Layout
             this.borrow.FlatAppearance.BorderSize = 0;
             this.borrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrow.ForeColor = System.Drawing.Color.Black;
-            this.borrow.Location = new System.Drawing.Point(0, 245);
-            this.borrow.Margin = new System.Windows.Forms.Padding(4);
+            this.borrow.Location = new System.Drawing.Point(0, 200);
             this.borrow.Name = "borrow";
-            this.borrow.Size = new System.Drawing.Size(320, 49);
+            this.borrow.Size = new System.Drawing.Size(240, 40);
             this.borrow.TabIndex = 5;
             this.borrow.Text = "BORRWS";
             this.borrow.TextColor = System.Drawing.Color.Black;
@@ -196,10 +140,9 @@ namespace LibraryManagement.Views.Layout
             this.borrower.FlatAppearance.BorderSize = 0;
             this.borrower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrower.ForeColor = System.Drawing.Color.Black;
-            this.borrower.Location = new System.Drawing.Point(0, 196);
-            this.borrower.Margin = new System.Windows.Forms.Padding(4);
+            this.borrower.Location = new System.Drawing.Point(0, 160);
             this.borrower.Name = "borrower";
-            this.borrower.Size = new System.Drawing.Size(320, 49);
+            this.borrower.Size = new System.Drawing.Size(240, 40);
             this.borrower.TabIndex = 4;
             this.borrower.Text = "BORROWERS";
             this.borrower.TextColor = System.Drawing.Color.Black;
@@ -216,10 +159,9 @@ namespace LibraryManagement.Views.Layout
             this.category.FlatAppearance.BorderSize = 0;
             this.category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.category.ForeColor = System.Drawing.Color.Black;
-            this.category.Location = new System.Drawing.Point(0, 147);
-            this.category.Margin = new System.Windows.Forms.Padding(4);
+            this.category.Location = new System.Drawing.Point(0, 120);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(320, 49);
+            this.category.Size = new System.Drawing.Size(240, 40);
             this.category.TabIndex = 3;
             this.category.Text = "CATEGORIES";
             this.category.TextColor = System.Drawing.Color.Black;
@@ -236,10 +178,9 @@ namespace LibraryManagement.Views.Layout
             this.author.FlatAppearance.BorderSize = 0;
             this.author.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.author.ForeColor = System.Drawing.Color.Black;
-            this.author.Location = new System.Drawing.Point(0, 98);
-            this.author.Margin = new System.Windows.Forms.Padding(4);
+            this.author.Location = new System.Drawing.Point(0, 80);
             this.author.Name = "author";
-            this.author.Size = new System.Drawing.Size(320, 49);
+            this.author.Size = new System.Drawing.Size(240, 40);
             this.author.TabIndex = 2;
             this.author.Text = "AUTHORS";
             this.author.TextColor = System.Drawing.Color.Black;
@@ -256,10 +197,9 @@ namespace LibraryManagement.Views.Layout
             this.book.FlatAppearance.BorderSize = 0;
             this.book.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.book.ForeColor = System.Drawing.Color.Black;
-            this.book.Location = new System.Drawing.Point(0, 49);
-            this.book.Margin = new System.Windows.Forms.Padding(4);
+            this.book.Location = new System.Drawing.Point(0, 40);
             this.book.Name = "book";
-            this.book.Size = new System.Drawing.Size(320, 49);
+            this.book.Size = new System.Drawing.Size(240, 40);
             this.book.TabIndex = 1;
             this.book.Text = "BOOKS";
             this.book.TextColor = System.Drawing.Color.Black;
@@ -277,25 +217,71 @@ namespace LibraryManagement.Views.Layout
             this.dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dashboard.ForeColor = System.Drawing.Color.Black;
             this.dashboard.Location = new System.Drawing.Point(0, 0);
-            this.dashboard.Margin = new System.Windows.Forms.Padding(4);
             this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(320, 49);
+            this.dashboard.Size = new System.Drawing.Size(240, 40);
             this.dashboard.TabIndex = 0;
             this.dashboard.Text = "DASHBOARD";
             this.dashboard.TextColor = System.Drawing.Color.Black;
             this.dashboard.UseVisualStyleBackColor = false;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.customButton2);
+            this.panel3.Controls.Add(this.customButton1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 596);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(240, 123);
+            this.panel3.TabIndex = 3;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.Transparent;
+            this.customButton2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton2.BorderColor = System.Drawing.Color.Transparent;
+            this.customButton2.BorderRadius = 0;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.Black;
+            this.customButton2.Location = new System.Drawing.Point(0, 43);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(240, 40);
+            this.customButton2.TabIndex = 4;
+            this.customButton2.Text = "SETTINGS";
+            this.customButton2.TextColor = System.Drawing.Color.Black;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.Transparent;
+            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.customButton1.BorderRadius = 0;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.Black;
+            this.customButton1.Location = new System.Drawing.Point(0, 83);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(240, 40);
+            this.customButton1.TabIndex = 3;
+            this.customButton1.Text = "LOGOUT";
+            this.customButton1.TextColor = System.Drawing.Color.Black;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
             // SideBarMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SideBarMenu";
-            this.Size = new System.Drawing.Size(320, 885);
+            this.Size = new System.Drawing.Size(240, 719);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);

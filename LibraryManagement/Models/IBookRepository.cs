@@ -13,5 +13,6 @@ namespace LibraryManagement.Models
         void Delete(int id);
         IEnumerable<BookModel> GetAll();
         IEnumerable<BookModel> GetByValue(string value);
+        IEnumerable<BookModel> GetByCategory(int value);
     }
 }
