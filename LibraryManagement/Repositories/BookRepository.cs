@@ -3,11 +3,7 @@ using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Windows.Forms;
 
 namespace LibraryManagement.Repositories
 {
@@ -19,16 +15,12 @@ namespace LibraryManagement.Repositories
         }
         public void Add(BookModel model)
         {
-            string sql = "";
-            if (File.Exists(@"Commands\pAddBook.sql"))
-                sql = File.ReadAllText(@"Commands\pAddBook.sql");
-            else
-                sql = @"INSERT INTO tblbook ( bookid, booktitle, bookpage, booktype, publishdate, publisher, categoryid) VALUES(:v0, :v1, :v2, :v3, :v4, :v5, :v6 );";
-
+            string sql = @"INSERT INTO tblbook ( bookid, booktitle, bookpage, booktype, publishdate, publisher, categoryid) VALUES(:v0, :v1, :v2, :v3, :v4, :v5, :v6 )";
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
-                connection.Open();
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
                 command.Connection = connection;
                 command.CommandText = sql;
                 command.CommandType = CommandType.Text;
@@ -48,7 +40,8 @@ namespace LibraryManagement.Repositories
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
-                connection.Open();
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"DELETE FROM tblbook WHERE bookid = :v1";
                 command.Parameters.Add(new OracleParameter("v1", id));
@@ -58,21 +51,25 @@ namespace LibraryManagement.Repositories
         }
         public void Edit(BookModel model)
         {
-            var sql = "INSERT INTO TBLBOOK VALUES(:ID, :TITLE, :PAGE, :TYPE, :PUBLISHDATE,:PUBLISHER,:CATEGOTY_ID);";
+            var sql = @"UPDATE TBLBOOK 
+                            SET BOOKTITLE= :v1, BOOKPAGE=:v2, BOOKTYPE=:v3, PUBLISHDATE=:v4, PUBLISHER=:v5, CATEGORYID=:v6 
+                            WHERE BOOKID = :v0";
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
-                connection.Open();
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
                 command.Connection = connection;
                 command.CommandText = sql;
                 command.CommandType = CommandType.Text;
-                command.Parameters.Add(new OracleParameter("ID", model.Id));
-                command.Parameters.Add(new OracleParameter("TITLE", model.Title));
-                command.Parameters.Add(new OracleParameter("PAGE", model.Page));
-                command.Parameters.Add(new OracleParameter("TYPE", model.Type));
-                command.Parameters.Add(new OracleParameter("PUBLISHDATE", model.Publisdate));
-                command.Parameters.Add(new OracleParameter("PUBLISHER", model.Publisher));
-                command.Parameters.Add(new OracleParameter("CATEGOTY_ID", model.Category_id));
+                command.Parameters.Add(new OracleParameter("v0", model.Id));
+                command.Parameters.Add(new OracleParameter("v1", model.Title));
+                command.Parameters.Add(new OracleParameter("v2", model.Page));
+                command.Parameters.Add(new OracleParameter("v3", model.Type));
+                command.Parameters.Add(new OracleParameter("v4", model.Publisdate));
+                command.Parameters.Add(new OracleParameter("v5", model.Publisher));
+                command.Parameters.Add(new OracleParameter("v6", Convert.ToInt32(model.Category_id)));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -85,15 +82,16 @@ namespace LibraryManagement.Repositories
                 sql = File.ReadAllText(@"Commands\vBook.sql");
             }else
             {
-                sql = "SELECT * FROM vBook";
+                sql = "SELECT * FROM VIEW_BOOKLIST";
             }
                
             var booklist = new List<BookModel>();
-            using (OracleConnection connecion = new OracleConnection(connectionString))
+            using (OracleConnection connection = new OracleConnection(connectionString))
             using (OracleCommand command = new OracleCommand())
             {
-                connecion.Open();
-                command.Connection = connecion;
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Connection = connection;
                 command.CommandText = sql;
                 using (var reader = command.ExecuteReader())
                 {
@@ -110,10 +108,9 @@ namespace LibraryManagement.Repositories
                         model.Category_name = reader[7].ToString();
                         model.Category_description = reader[8].ToString();
                         booklist.Add(model);
-                        Console.WriteLine(reader[5].ToString());
                     }
                 }
-                connecion.Close();
+                connection.Close();
             }
             return booklist;
         }
@@ -126,7 +123,8 @@ namespace LibraryManagement.Repositories
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
-                connection.Open();
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
                 command.Connection = connection;
                 command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE BOOKID = :v1 OR BOOKTITLE LIKE '${title}'";
                 command.CommandType = CommandType.Text;
@@ -147,7 +145,6 @@ namespace LibraryManagement.Repositories
                         model.Category_name = reader[7].ToString();
                         model.Category_description = reader[8].ToString();
                         booklist.Add(model);
-                        Console.WriteLine(reader[5].ToString());
                     }
                     reader.Close();
                 }
@@ -158,13 +155,13 @@ namespace LibraryManagement.Repositories
 
         public IEnumerable<BookModel> GetByCategory(int category_id)
         {
-
             var booklist = new List<BookModel>();
-            using (OracleConnection connecion = new OracleConnection(connectionString))
+            using (OracleConnection connection = new OracleConnection(connectionString))
             using (OracleCommand command = new OracleCommand())
             {
-                connecion.Open();
-                command.Connection = connecion;
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Connection = connection;
                 command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE CATEGORYID = :v1";
                 command.Parameters.Add(new OracleParameter("v1", category_id));
                 using (var reader = command.ExecuteReader())
@@ -185,7 +182,7 @@ namespace LibraryManagement.Repositories
                         Console.WriteLine(reader[5].ToString());
                     }
                 }
-                connecion.Close();
+                connection.Close();
             }
             return booklist;
         }

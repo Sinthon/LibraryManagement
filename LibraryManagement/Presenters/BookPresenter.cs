@@ -143,8 +143,7 @@ namespace LibraryManagement.Presenters
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            
+            }  
         }
 
         private void EditBook(object sender, EventArgs e)

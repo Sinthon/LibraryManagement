@@ -16,6 +16,7 @@ using LibraryManagement.Views.Category;
 using LibraryManagement.Views.Author;
 using LibraryManagement.Views.Author.Dialog;
 using LibraryManagement.Views.Librarian;
+using LibraryManagement.Views.Category.Dialog;
 
 namespace LibraryManagement.Presenters
 {
@@ -108,8 +109,8 @@ namespace LibraryManagement.Presenters
         {
             ICategoryView catview = CategoryView.GetInstace((Form)_mainview);
             ICategoryRepository categoryRepository = CategoryRepository.GetInstance(connectionString);
-
-            CategoryPresenter.GetInstance(categoryRepository, catview);
+            ICategoryDialog dialog = CategoryDilogView.GetInstance();
+            CategoryPresenter.GetInstance(catview, dialog, categoryRepository);
             catview.Show();
         }
     }

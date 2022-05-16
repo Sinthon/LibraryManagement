@@ -38,6 +38,14 @@ namespace LibraryManagement.Views.Category
             {
                 Load?.Invoke(this, EventArgs.Empty);
             };
+            editToolStripMenuItem.Click += delegate
+            {
+                Edit?.Invoke(this, EventArgs.Empty);
+            };
+            toolStripMenuItem1.Click += delegate
+            {
+                Delete?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public string sValue {
@@ -67,6 +75,37 @@ namespace LibraryManagement.Views.Category
         public void SetBindingSource(BindingSource bindingSource)
         {
             dataGridView1.DataSource = bindingSource;
+        }
+
+        private void activities_Click(object sender, EventArgs e)
+        {
+            cms_activities.Show((Control)sender, 0, -cms_activities.Height);
+        }
+
+        private void Mouse_Click(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                cms_activities.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void Cell_MouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    dgv.CurrentCell = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    dgv.Rows[e.RowIndex].Selected = true;
+                    dgv.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

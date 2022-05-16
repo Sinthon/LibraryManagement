@@ -15,14 +15,14 @@ namespace LibraryManagement.Models
         private string description;
 
         [DisplayName("CATEGORY ID")]
-        [Required(ErrorMessage = "Categoty ID is requerid")]
+        [Required(ErrorMessage = "Categoty id is requerid")]
         public int Id { 
             get => id;
             set => id = value; 
         }
 
         [DisplayName("CATEGORY NAME")]
-        [Required(ErrorMessage = "Categoty NAME is requerid")]
+        [Required(ErrorMessage = "Categoty name is requerid")]
         public string Name { 
             get => name; 
             set => name = value; 

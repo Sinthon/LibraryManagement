@@ -194,6 +194,13 @@
     <Compile Include="Views\Category\CategoryView.Designer.cs">
       <DependentUpon>CategoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Category\Dialog\CategoryDilogView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Category\Dialog\CategoryDilogView.Designer.cs">
+      <DependentUpon>CategoryDilogView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Dialog\ICategoryDialog.cs" />
     <Compile Include="Views\Category\ICategoryView.cs" />
     <Compile Include="Views\Dashboard\DashboardView.cs">
       <SubType>Form</SubType>
@@ -270,6 +277,9 @@
     <EmbeddedResource Include="Views\Category\CategoryView.resx">
       <DependentUpon>CategoryView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Category\Dialog\CategoryDilogView.resx">
+      <DependentUpon>CategoryDilogView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardView.resx">
       <DependentUpon>DashboardView.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,7 +324,9 @@
   <ItemGroup>
     <None Include="Resources\MicrosoftTeams-image.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Librarian\Dialog\" />
+  </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>

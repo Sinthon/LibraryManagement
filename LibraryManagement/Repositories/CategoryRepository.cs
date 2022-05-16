@@ -2,6 +2,7 @@
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,12 +19,37 @@ namespace LibraryManagement.Repositories
 
         public void Add(CategoryModel model)
         {
-            
+            string sql = "INSERT INTO TBLCATEGORY VALUES(:v1, :v2, :v3)";
+
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            using (OracleCommand command = new OracleCommand())
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Connection = connection;
+                command.CommandText = sql;
+                command.CommandType = CommandType.Text;
+                command.Parameters.Add(new OracleParameter("v1", model.Id));
+                command.Parameters.Add(new OracleParameter("v2", model.Name));
+                command.Parameters.Add(new OracleParameter("v3", model.Description));
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         public void Delete(int id)
         {
-            
+            using (var connection = new OracleConnection(connectionString))
+            using (var command = new OracleCommand())
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"DELETE FROM TBLCATEGORY WHERE CATEGORYID = :v1";
+                command.Parameters.Add(new OracleParameter("v1", id));
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         public void Edit(CategoryModel model)
@@ -61,7 +87,35 @@ namespace LibraryManagement.Repositories
         
         public IEnumerable<CategoryModel> GetByValue(string value)
         {
-            throw new NotImplementedException();
+            var list = new List<CategoryModel>();
+            int id = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
+            string name = value;
+
+            using (var connection = new OracleConnection(connectionString))
+            using (var command = new OracleCommand())
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Connection = connection;
+                command.CommandText = $"SELECT * FROM TBLCATEGORY WHERE CATEGORYID = :v1 OR CATEGORYNAME LIKE '${name}'";
+                command.CommandType = CommandType.Text;
+                command.Parameters.Add(new OracleParameter("v1", id));
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var model = new CategoryModel();
+                        model.Id = Convert.ToInt32(reader[0]);
+                        model.Name = reader[1].ToString();
+                        model.Description = reader[2].ToString();
+                        list.Add(model);
+                    }
+                    reader.Close();
+                }
+                connection.Close();
+            }
+            return list;
         }
 
 
