@@ -54,7 +54,20 @@ namespace LibraryManagement.Repositories
 
         public void Edit(CategoryModel model)
         {
-            
+            string sql = "UPDATE tblcategory SET CATEGORYNAME= :v1, CAT_DESC= :v2 WHERE CATEGORYID= :v3";
+            using (var connection = new OracleConnection(connectionString))
+            using (var command = new OracleCommand())
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                command.Connection = connection;
+                command.CommandText = sql;
+                command.Parameters.Add(new OracleParameter("v1", model.Name));
+                command.Parameters.Add(new OracleParameter("v2", model.Description));
+                command.Parameters.Add(new OracleParameter("v3", model.Id));
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         public IEnumerable<CategoryModel> GetAll()
