@@ -110,7 +110,7 @@ namespace LibraryManagement.Repositories
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"SELECT * FROM TBLCATEGORY WHERE CATEGORYID = :v1 OR CATEGORYNAME LIKE '${name}'";
+                command.CommandText = $"SELECT * FROM TBLCATEGORY WHERE CATEGORYID = :v1 OR CATEGORYNAME LIKE '${name}%'";
                 command.CommandType = CommandType.Text;
                 command.Parameters.Add(new OracleParameter("v1", id));
 

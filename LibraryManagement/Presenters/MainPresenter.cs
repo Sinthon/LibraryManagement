@@ -17,6 +17,7 @@ using LibraryManagement.Views.Author;
 using LibraryManagement.Views.Author.Dialog;
 using LibraryManagement.Views.Librarian;
 using LibraryManagement.Views.Category.Dialog;
+using LibraryManagement.Views.PrintForms;
 
 namespace LibraryManagement.Presenters
 {
@@ -35,20 +36,23 @@ namespace LibraryManagement.Presenters
             _sideBar = sideBar;
             this.connectionString = connectionString;
             _mainview.SetUp += SetUp;
-            _sideBar.ShowDahsBoard += ShowDashboard;
-            _sideBar.ShowBooks += ShowBook;
-            _sideBar.ShowAuthor += ShowAuthor;
-            _sideBar.ShowCategory += ShowCategory;
-            _sideBar.ShowLibrarian += ShowLibrarian;
+
+        }
+
+        private void ShowBorrowBook(object sender, EventArgs e)
+        {
+            //IPrintFormRepository repository = new PrintFormRepository(connectionString);
+            //IPrintFormView printFormView = PrintFormView.GetInstace((Form)_mainview);
+            //printFormView.Show();
+            //PrintFormPresenter.GetInstance();
         }
 
         private void ShowLibrarian(object sender, EventArgs e)
         {
             ILibrarianView librarianview = LibrarianView.GetInstace((Form)_mainview);
             ILibrarianRepository repository = new LibrarianRepository(connectionString);
-
-            LibrarianPrecenter.GetInstance(librarianview, repository);
             librarianview.Show();
+            LibrarianPrecenter.GetInstance(librarianview, repository);
         }
 
         private void SetUp(object sender, EventArgs e)
@@ -74,6 +78,13 @@ namespace LibraryManagement.Presenters
 
             _dashboard.ShowBooks += ShowBook;
             _dashboard.ShowAuthor += ShowAuthor;
+
+            _sideBar.ShowDahsBoard += ShowDashboard;
+            _sideBar.ShowBooks += ShowBook;
+            _sideBar.ShowAuthor += ShowAuthor;
+            _sideBar.ShowCategory += ShowCategory;
+            _sideBar.ShowLibrarian += ShowLibrarian;
+            _sideBar.ShowBorrowBook += ShowBorrowBook;
         }
 
 
@@ -82,9 +93,8 @@ namespace LibraryManagement.Presenters
             IAuthorView authorview = AuthorView.GetInstace((Form)_mainview);
             IAuthorRepository authorRepository = AuthorRepository.GetInstance(connectionString);
             IAuthorDialog authordialog = AuthorDialog.GetInstance();
-
-            AuthorPresenter.GetInstance(authorview, authordialog, authorRepository);
             authorview.Show();
+            AuthorPresenter.GetInstance(authorview, authordialog, authorRepository);
         }
 
         private void ShowBook(object sender, EventArgs e)
@@ -94,9 +104,8 @@ namespace LibraryManagement.Presenters
 
             ICategoryRepository categoryRepository = CategoryRepository.GetInstance(connectionString);
             IBookRepository repository = new BookRepository(connectionString);
-
-            BookPresenter.GetInstance(bookview,dailog,repository, categoryRepository);
             bookview.Show();
+            BookPresenter.GetInstance(bookview,dailog,repository, categoryRepository);
         }
 
         private void ShowDashboard(object sender, EventArgs e)
@@ -110,8 +119,8 @@ namespace LibraryManagement.Presenters
             ICategoryView catview = CategoryView.GetInstace((Form)_mainview);
             ICategoryRepository categoryRepository = CategoryRepository.GetInstance(connectionString);
             ICategoryDialog dialog = CategoryDilogView.GetInstance();
-            CategoryPresenter.GetInstance(catview, dialog, categoryRepository);
             catview.Show();
+            CategoryPresenter.GetInstance(catview, dialog, categoryRepository);
         }
     }
 }

@@ -245,13 +245,6 @@
     <Compile Include="Views\Main\MDIParent1.Designer.cs">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PrintForms\IPrintFormView.cs" />
-    <Compile Include="Views\PrintForms\PrintFormView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\PrintForms\PrintFormView.Designer.cs">
-      <DependentUpon>PrintFormView.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -298,9 +291,6 @@
     <EmbeddedResource Include="Views\Main\MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PrintForms\PrintFormView.resx">
-      <DependentUpon>PrintFormView.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -325,6 +315,7 @@
     <None Include="Resources\MicrosoftTeams-image.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FormReport\" />
     <Folder Include="Views\Librarian\Dialog\" />
   </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
@@ -340,6 +331,9 @@
       <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />

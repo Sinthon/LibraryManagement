@@ -76,15 +76,7 @@ namespace LibraryManagement.Repositories
         }
         public IEnumerable<BookModel> GetAll()
         {
-            string sql;
-            if (File.Exists(@"Commands\vBook.sql"))
-            {
-                sql = File.ReadAllText(@"Commands\vBook.sql");
-            }else
-            {
-                sql = "SELECT * FROM VIEW_BOOKLIST";
-            }
-               
+            string sql = "SELECT * FROM VIEW_BOOKLIST ORDER BY BOOKID DESC";
             var booklist = new List<BookModel>();
             using (OracleConnection connection = new OracleConnection(connectionString))
             using (OracleCommand command = new OracleCommand())
@@ -126,7 +118,7 @@ namespace LibraryManagement.Repositories
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE BOOKID = :v1 OR BOOKTITLE LIKE '${title}'";
+                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE BOOKID = :v1 OR BOOKTITLE LIKE '${title}' ORDER BY BOOKID DESC";
                 command.CommandType = CommandType.Text;
                 command.Parameters.Add(new OracleParameter("v1", id));
 
@@ -162,7 +154,7 @@ namespace LibraryManagement.Repositories
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE CATEGORYID = :v1";
+                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE CATEGORYID = :v1  ORDER BY BOOKID DESC";
                 command.Parameters.Add(new OracleParameter("v1", category_id));
                 using (var reader = command.ExecuteReader())
                 {
