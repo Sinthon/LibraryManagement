@@ -16,7 +16,7 @@ namespace LibraryManagement.Views.Layout
         event EventHandler ShowCategory;
         event EventHandler ShowBorrowBook;
         event EventHandler ShowReturnBook;
-
+        event EventHandler ShowSetting;
         void Visible(bool visible);
     }
 }

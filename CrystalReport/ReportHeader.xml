@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="vReport" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportHeader" msprop:BaseTable.2="TBLLIBRARIAN" msprop:BaseTable.5="TBLAUTHOR" msprop:BaseTable.3="TBLBORROWBOOKLINE" msprop:BaseTable.6="TBLCATEGORY" msprop:BaseTable.0="TBLBORROWER" msprop:BaseTable.4="TBLBOOK" msprop:BaseTable.1="TBLBORROWBOOK" msprop:SqlHash="-1049459046">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="BOOROWER_NAME" msprop:BaseColumn="BORROWERNAME" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="BORROWER_GENDER" msprop:BaseColumn="BORROWERSEX" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="BORROWER_DOB" msprop:BaseColumn="BORROWERDOB" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="BORROWER_ADDRESS" msprop:BaseColumn="BORROWERADDRESS" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="BORROWER_PHONE" msprop:BaseColumn="BORROWERTEL" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="BORROWER_MAIL" msprop:BaseColumn="BORROWEREMAIL" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="LIBRARIAN_ID" msprop:BaseColumn="LIBRARIAN_ID" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="LIBRARIAN_NAME" msprop:BaseColumn="LIB_NAME" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="TBLLIBRARIAN_GEMDER" msprop:BaseColumn="LIB_SEX" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="LIBRARIAN_DOB" msprop:BaseColumn="LIB_DOB" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LIBRARIAN_ADDRESS" msprop:BaseColumn="LIB_ADDRESS" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="LIBRARIAN_PHONE" msprop:BaseColumn="LIB_TEL" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="LIBRARIAN_EMAIL" msprop:BaseColumn="LIB_EMAIL" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="LIBRARIAN_PHOTO" msprop:BaseColumn="LIB_Photo" msprop:OraDbType="102" type="xs:base64Binary" minOccurs="0" />
+                <xs:element name="BORROW_DATE" msprop:BaseColumn="BORROW_DATE" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="RETURN_DATE" msprop:BaseColumn="RETURN_DATE" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="DISPOSIT_MONEY" msprop:BaseColumn="DISPOSIT_MONEY" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="STATUS" msprop:BaseColumn="STATUS" msprop:OraDbType="126" type="xs:string" minOccurs="0" />
+                <xs:element name="BORROWBOOK_ID" msprop:BaseColumn="BORROWBOOK_ID" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="LINE_ID" msprop:BaseColumn="LINE_ID" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="BOOK_ID" msprop:BaseColumn="BOOK_ID" msprop:OraDbType="107" type="xs:decimal" minOccurs="0" />
+                <xs:element name="BOOKTITLE" msprop:BaseColumn="BOOKTITLE" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="BOOKPAGE" msprop:BaseColumn="BOOKPAGE" msprop:OraDbType="112" type="xs:int" minOccurs="0" />
+                <xs:element name="BOOKTYPE" msprop:BaseColumn="BOOKTYPE" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="PUBLISHDATE" msprop:BaseColumn="PUBLISHDATE" msprop:OraDbType="106" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="PUBLISHER" msprop:BaseColumn="PUBLISHER" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="CATEGORYID" msprop:BaseColumn="CATEGORYID" msprop:OraDbType="112" type="xs:int" minOccurs="0" />
+                <xs:element name="AUTHOR_NAME" msprop:BaseColumn="AUTHORNAME" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="AUTHOR_NATION" msprop:BaseColumn="NATION" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="AUTHOR_SKILL" msprop:BaseColumn="SKILL" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="CATEGORY_NAME" msprop:BaseColumn="CATEGORYNAME" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+                <xs:element name="CATEGORY_DESCRIPTION" msprop:BaseColumn="CAT_DESC" msprop:OraDbType="119" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ReportHeader>
+    <BOOROWER_NAME>Na Von</BOOROWER_NAME>
+    <BORROWER_GENDER>Male</BORROWER_GENDER>
+    <BORROWER_DOB>2001-03-01T21:32:09+07:00</BORROWER_DOB>
+    <BORROWER_ADDRESS>Siemreap</BORROWER_ADDRESS>
+    <BORROWER_PHONE>0843527234</BORROWER_PHONE>
+    <BORROWER_MAIL>von@gmail.com</BORROWER_MAIL>
+    <LIBRARIAN_ID>1</LIBRARIAN_ID>
+    <LIBRARIAN_NAME>Chhnon</LIBRARIAN_NAME>
+    <TBLLIBRARIAN_GEMDER>Male</TBLLIBRARIAN_GEMDER>
+    <LIBRARIAN_DOB>2001-10-15T19:33:13+07:00</LIBRARIAN_DOB>
+    <LIBRARIAN_ADDRESS>Siemreap</LIBRARIAN_ADDRESS>
+    <LIBRARIAN_PHONE>081968806</LIBRARIAN_PHONE>
+    <LIBRARIAN_EMAIL>non@gmail.com</LIBRARIAN_EMAIL>
+    <BORROW_DATE>2022-05-04T21:34:34+07:00</BORROW_DATE>
+    <RETURN_DATE>2022-06-01T21:34:40+07:00</RETURN_DATE>
+    <DISPOSIT_MONEY>10000</DISPOSIT_MONEY>
+    <STATUS>Borrowing</STATUS>
+    <BORROWBOOK_ID>1</BORROWBOOK_ID>
+    <LINE_ID>1</LINE_ID>
+    <BOOK_ID>1</BOOK_ID>
+    <BOOKTITLE>Java Programing</BOOKTITLE>
+    <BOOKPAGE>200</BOOKPAGE>
+    <BOOKTYPE>Programing Book</BOOKTYPE>
+    <PUBLISHDATE>2022-05-04T00:00:00+07:00</PUBLISHDATE>
+    <PUBLISHER>Sinthon Seng</PUBLISHER>
+    <CATEGORYID>1</CATEGORYID>
+    <AUTHOR_NAME>Sinthon</AUTHOR_NAME>
+    <AUTHOR_NATION>ambodia</AUTHOR_NATION>
+    <AUTHOR_SKILL>IT worker</AUTHOR_SKILL>
+    <CATEGORY_NAME>Book</CATEGORY_NAME>
+  </ReportHeader>
+</NewDataSet>

@@ -17,7 +17,8 @@ using LibraryManagement.Views.Author;
 using LibraryManagement.Views.Author.Dialog;
 using LibraryManagement.Views.Librarian;
 using LibraryManagement.Views.Category.Dialog;
-using LibraryManagement.Views.PrintForms;
+using ReportService.Presenters;
+using LibraryManagement.Views.Setting;
 
 namespace LibraryManagement.Presenters
 {
@@ -36,7 +37,6 @@ namespace LibraryManagement.Presenters
             _sideBar = sideBar;
             this.connectionString = connectionString;
             _mainview.SetUp += SetUp;
-
         }
 
         private void ShowBorrowBook(object sender, EventArgs e)
@@ -85,8 +85,14 @@ namespace LibraryManagement.Presenters
             _sideBar.ShowCategory += ShowCategory;
             _sideBar.ShowLibrarian += ShowLibrarian;
             _sideBar.ShowBorrowBook += ShowBorrowBook;
+            _sideBar.ShowSetting += ShowSetting;
         }
 
+        private void ShowSetting(object sender, EventArgs e)
+        {
+            ISettingView settingview = SettingView.GetInstance((Form)_mainview);
+            settingview.Show();
+        }
 
         private void ShowAuthor(object sender, EventArgs e)
         {

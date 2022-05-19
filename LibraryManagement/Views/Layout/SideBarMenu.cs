@@ -53,6 +53,10 @@ namespace LibraryManagement.Views.Layout
             {
                 ShowLibrarian.Invoke(this, EventArgs.Empty);
             };
+            setting.Click += delegate
+            {
+                ShowSetting?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         private static SideBarMenu instance;
@@ -79,5 +83,6 @@ namespace LibraryManagement.Views.Layout
         public event EventHandler ShowCategory;
         public event EventHandler ShowBorrowBook;
         public event EventHandler ShowReturnBook;
+        public event EventHandler ShowSetting;
     }
 }

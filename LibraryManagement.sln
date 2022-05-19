@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement", "LibraryManagement\LibraryManagement.csproj", "{75F5DFF9-191F-4766-94E9-EF1B0E5C2399}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportService", "ReportService\ReportService.csproj", "{33D3933F-6B11-4C89-90BF-F2D885136EF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{75F5DFF9-191F-4766-94E9-EF1B0E5C2399}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75F5DFF9-191F-4766-94E9-EF1B0E5C2399}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75F5DFF9-191F-4766-94E9-EF1B0E5C2399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D3933F-6B11-4C89-90BF-F2D885136EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D3933F-6B11-4C89-90BF-F2D885136EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D3933F-6B11-4C89-90BF-F2D885136EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D3933F-6B11-4C89-90BF-F2D885136EF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

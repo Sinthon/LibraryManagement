@@ -51,9 +51,7 @@ namespace LibraryManagement.Repositories
         }
         public void Edit(BookModel model)
         {
-            var sql = @"UPDATE TBLBOOK 
-                            SET BOOKTITLE= :v1, BOOKPAGE=:v2, BOOKTYPE=:v3, PUBLISHDATE=:v4, PUBLISHER=:v5, CATEGORYID=:v6 
-                            WHERE BOOKID = :v0";
+            var sql = @"UPDATE tblbook SET booktitle = :v1, bookpage = :v2, booktype = :v3, publishdate = :v4,publisher = :v5,categoryid = :v6 WHERE bookid = :v0";
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {

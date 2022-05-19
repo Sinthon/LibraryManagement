@@ -151,7 +151,6 @@
     <Compile Include="Presenters\LibrarianPrecenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
-    <Compile Include="Presenters\PrintFormPresenter.cs" />
     <Compile Include="Repositories\AuthorRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\AuthRepository.cs" />
@@ -239,11 +238,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Main\MDIParent1.cs">
+    <Compile Include="Views\Setting\ISettingView.cs" />
+    <Compile Include="Views\Setting\SettingView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Main\MDIParent1.Designer.cs">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
+    <Compile Include="Views\Setting\SettingView.Designer.cs">
+      <DependentUpon>SettingView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -288,8 +288,8 @@
     <EmbeddedResource Include="Views\Main\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Main\MDIParent1.resx">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Setting\SettingView.resx">
+      <DependentUpon>SettingView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
@@ -334,6 +334,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReportService\ReportService.csproj">
+      <Project>{33D3933F-6B11-4C89-90BF-F2D885136EF7}</Project>
+      <Name>ReportService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />

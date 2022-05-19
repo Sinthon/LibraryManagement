@@ -40,7 +40,7 @@ namespace LibraryManagement.Views.Layout
             this.book = new LibraryManagement.Controls.CustomButton();
             this.dashboard = new LibraryManagement.Controls.CustomButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.customButton2 = new LibraryManagement.Controls.CustomButton();
+            this.setting = new LibraryManagement.Controls.CustomButton();
             this.customButton1 = new LibraryManagement.Controls.CustomButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -226,7 +226,7 @@ namespace LibraryManagement.Views.Layout
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.customButton2);
+            this.panel3.Controls.Add(this.setting);
             this.panel3.Controls.Add(this.customButton1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 596);
@@ -234,24 +234,24 @@ namespace LibraryManagement.Views.Layout
             this.panel3.Size = new System.Drawing.Size(240, 123);
             this.panel3.TabIndex = 3;
             // 
-            // customButton2
+            // setting
             // 
-            this.customButton2.BackColor = System.Drawing.Color.Transparent;
-            this.customButton2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton2.BorderRadius = 0;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.Black;
-            this.customButton2.Location = new System.Drawing.Point(0, 43);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(240, 40);
-            this.customButton2.TabIndex = 4;
-            this.customButton2.Text = "SETTINGS";
-            this.customButton2.TextColor = System.Drawing.Color.Black;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.setting.BackColor = System.Drawing.Color.Transparent;
+            this.setting.BackgroundColor = System.Drawing.Color.Transparent;
+            this.setting.BorderColor = System.Drawing.Color.Transparent;
+            this.setting.BorderRadius = 0;
+            this.setting.BorderSize = 0;
+            this.setting.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.setting.FlatAppearance.BorderSize = 0;
+            this.setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.setting.ForeColor = System.Drawing.Color.Black;
+            this.setting.Location = new System.Drawing.Point(0, 43);
+            this.setting.Name = "setting";
+            this.setting.Size = new System.Drawing.Size(240, 40);
+            this.setting.TabIndex = 4;
+            this.setting.Text = "SETTINGS";
+            this.setting.TextColor = System.Drawing.Color.Black;
+            this.setting.UseVisualStyleBackColor = false;
             // 
             // customButton1
             // 
@@ -296,7 +296,7 @@ namespace LibraryManagement.Views.Layout
         private Controls.CustomButton book;
         private Controls.CustomButton dashboard;
         private System.Windows.Forms.Panel panel3;
-        private Controls.CustomButton customButton2;
+        private Controls.CustomButton setting;
         private Controls.CustomButton customButton1;
         private Controls.CustomButton returnbook;
         private Controls.CustomButton borrow;

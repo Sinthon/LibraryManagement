@@ -125,9 +125,9 @@ namespace LibraryManagement.Views.Librarian
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 24);
+            this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Categories";
+            this.label1.Text = "Librarian";
             // 
             // panel4
             // 
@@ -232,7 +232,7 @@ namespace LibraryManagement.Views.Librarian
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.updateToolStripMenuItem.Text = "Delete";
             // 
-            // CategoryView
+            // LibrarianView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,7 +243,7 @@ namespace LibraryManagement.Views.Librarian
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Name = "CategoryView";
+            this.Name = "LibrarianView";
             this.Text = "BookView";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
