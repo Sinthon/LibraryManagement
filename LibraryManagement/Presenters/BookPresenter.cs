@@ -70,7 +70,6 @@ namespace LibraryManagement.Presenters
             model.Id = _dialog.Id;
             model.Title = _dialog.Title;
             model.Page = _dialog.Page;
-            model.Type = _dialog.Type;
             model.Publisdate = _dialog.PublicDate;
             model.Publisher = _dialog.Publisher;
             model.Category_id = _dialog.Categiry_Id;
@@ -156,7 +155,6 @@ namespace LibraryManagement.Presenters
             _dialog.Id = single_record.Id;
             _dialog.Title = single_record.Title;
             _dialog.Page = single_record.Page;
-            _dialog.Type = single_record.Type;
             _dialog.PublicDate = (DateTime)single_record.Publisdate;
             _dialog.Publisher = single_record.Publisher;
             _dialog.Categiry_Id = single_record.Category_id;

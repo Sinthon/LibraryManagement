@@ -51,10 +51,7 @@ namespace LibraryManagement.Views.Books.Dialog
                
             set => page.Text = value.ToString(); 
         }
-        public string Type { 
-            get => type.Text; 
-            set => type.Text = value; 
-        }
+
         public DateTime PublicDate { 
             get => publish_date.Value;
             set => publish_date.Value = value; 

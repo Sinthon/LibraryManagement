@@ -15,7 +15,7 @@ namespace LibraryManagement.Repositories
         }
         public void Add(BookModel model)
         {
-            string sql = @"INSERT INTO tblbook ( bookid, booktitle, bookpage, booktype, publishdate, publisher, categoryid) VALUES(:v0, :v1, :v2, :v3, :v4, :v5, :v6 )";
+            string sql = @"INSERT INTO tblbook ( bookid, booktitle, bookpage, publishdate, publisher, categoryid) VALUES(:v0, :v1, :v2, :v3, :v4, :v5 )";
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
@@ -27,10 +27,9 @@ namespace LibraryManagement.Repositories
                 command.Parameters.Add(new OracleParameter("v1", model.Id));
                 command.Parameters.Add(new OracleParameter("v2", model.Title));
                 command.Parameters.Add(new OracleParameter("v3", model.Page));
-                command.Parameters.Add(new OracleParameter("v4", model.Type));
-                command.Parameters.Add(new OracleParameter("v5", model.Publisdate));
-                command.Parameters.Add(new OracleParameter("v6", model.Publisher));
-                command.Parameters.Add(new OracleParameter("v7", model.Category_id));
+                command.Parameters.Add(new OracleParameter("v4", model.Publisdate));
+                command.Parameters.Add(new OracleParameter("v5", model.Publisher));
+                command.Parameters.Add(new OracleParameter("v6", model.Category_id));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -51,7 +50,7 @@ namespace LibraryManagement.Repositories
         }
         public void Edit(BookModel model)
         {
-            var sql = @"UPDATE tblbook SET booktitle = :v1, bookpage = :v2, booktype = :v3, publishdate = :v4,publisher = :v5,categoryid = :v6 WHERE bookid = :v0";
+            var sql = @"UPDATE tblbook SET booktitle = :v1, bookpage = :v2, publishdate = :v3,publisher = :v4,categoryid = :v5 WHERE bookid = :v0";
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
@@ -64,17 +63,16 @@ namespace LibraryManagement.Repositories
                 command.Parameters.Add(new OracleParameter("v0", model.Id));
                 command.Parameters.Add(new OracleParameter("v1", model.Title));
                 command.Parameters.Add(new OracleParameter("v2", model.Page));
-                command.Parameters.Add(new OracleParameter("v3", model.Type));
-                command.Parameters.Add(new OracleParameter("v4", model.Publisdate));
-                command.Parameters.Add(new OracleParameter("v5", model.Publisher));
-                command.Parameters.Add(new OracleParameter("v6", Convert.ToInt32(model.Category_id)));
+                command.Parameters.Add(new OracleParameter("v3", model.Publisdate));
+                command.Parameters.Add(new OracleParameter("v4", model.Publisher));
+                command.Parameters.Add(new OracleParameter("v5", Convert.ToInt32(model.Category_id)));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
         }
         public IEnumerable<BookModel> GetAll()
         {
-            string sql = "SELECT * FROM VIEW_BOOKLIST ORDER BY BOOKID DESC";
+            string sql = "SELECT * FROM VIEW_BOOK ORDER BY BOOKID DESC";
             var booklist = new List<BookModel>();
             using (OracleConnection connection = new OracleConnection(connectionString))
             using (OracleCommand command = new OracleCommand())
@@ -88,15 +86,14 @@ namespace LibraryManagement.Repositories
                     while (reader.Read())
                     {
                         var model = new BookModel();
-                        model.Id = (int)reader[0];
+                        model.Id = (int)reader["BOOKID"];
                         model.Title = reader[1].ToString();
                         model.Page = (int)reader[2];
-                        model.Type = reader[3].ToString();
-                        model.Publisdate = (DateTime)reader[4];
-                        model.Publisher = reader[5].ToString();
-                        model.Category_id = (int)reader[6];
-                        model.Category_name = reader[7].ToString();
-                        model.Category_description = reader[8].ToString();
+                        model.Publisdate = (DateTime)reader[3];
+                        model.Publisher = reader[4].ToString();
+                        model.Category_id = Convert.ToInt32(reader["CATEGORYID"]);
+                        model.Category_name = reader[6].ToString();
+                        model.Category_description = reader[7].ToString();
                         booklist.Add(model);
                     }
                 }
@@ -116,7 +113,7 @@ namespace LibraryManagement.Repositories
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE BOOKID = :v1 OR BOOKTITLE LIKE '${title}' ORDER BY BOOKID DESC";
+                command.CommandText = $"SELECT * FROM VIEW_BOOK WHERE BOOKID = :v1 OR BOOKTITLE LIKE '${title}' ORDER BY BOOKID DESC";
                 command.CommandType = CommandType.Text;
                 command.Parameters.Add(new OracleParameter("v1", id));
 
@@ -125,15 +122,14 @@ namespace LibraryManagement.Repositories
                     while (reader.Read())
                     {
                         var model = new BookModel();
-                        model.Id = (int)reader[0];
+                        model.Id = (int)reader["BOOKID"];
                         model.Title = reader[1].ToString();
                         model.Page = (int)reader[2];
-                        model.Type = reader[3].ToString();
-                        model.Publisdate = (DateTime)reader[4];
-                        model.Publisher = reader[5].ToString();
-                        model.Category_id = (int)reader[6];
-                        model.Category_name = reader[7].ToString();
-                        model.Category_description = reader[8].ToString();
+                        model.Publisdate = (DateTime)reader[3];
+                        model.Publisher = reader[4].ToString();
+                        model.Category_id = Convert.ToInt32(reader["CATEGORYID"]);
+                        model.Category_name = reader[6].ToString();
+                        model.Category_description = reader[7].ToString();
                         booklist.Add(model);
                     }
                     reader.Close();
@@ -152,24 +148,22 @@ namespace LibraryManagement.Repositories
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
                 command.Connection = connection;
-                command.CommandText = $"SELECT * FROM VIEW_BOOKLIST WHERE CATEGORYID = :v1  ORDER BY BOOKID DESC";
+                command.CommandText = $"SELECT * FROM VIEW_BOOK WHERE CATEGORYID = :v1  ORDER BY BOOKID DESC";
                 command.Parameters.Add(new OracleParameter("v1", category_id));
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         var model = new BookModel();
-                        model.Id = (int)reader[0];
+                        model.Id = (int)reader["BOOKID"];
                         model.Title = reader[1].ToString();
                         model.Page = (int)reader[2];
-                        model.Type = reader[3].ToString();
-                        model.Publisdate = (DateTime)reader[4];
-                        model.Publisher = reader[5].ToString();
-                        model.Category_id = (int)reader[6];
-                        model.Category_name = reader[7].ToString();
-                        model.Category_description = reader[8].ToString();
+                        model.Publisdate = (DateTime)reader[3];
+                        model.Publisher = reader[4].ToString();
+                        model.Category_id = Convert.ToInt32(reader["CATEGORYID"]);
+                        model.Category_name = reader[6].ToString();
+                        model.Category_description = reader[7].ToString();
                         booklist.Add(model);
-                        Console.WriteLine(reader[5].ToString());
                     }
                 }
                 connection.Close();

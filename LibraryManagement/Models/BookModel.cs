@@ -13,7 +13,6 @@ namespace LibraryManagement.Models
         private int id;
         private string title;
         private int page;
-        private string type;
         private DateTime publisdate;
         private string publisher;
         private int category_id;
@@ -29,9 +28,6 @@ namespace LibraryManagement.Models
 
         [DisplayName("PAGE")]
         public int Page { get => page; set => page = value; }
-
-        [DisplayName("TYPE")]
-        public string Type { get => type; set => type = value; }
 
         [DisplayName("PUBLISH DATE")]
         public DateTime Publisdate { get => publisdate; set => publisdate = value; }

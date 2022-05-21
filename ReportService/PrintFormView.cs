@@ -15,30 +15,24 @@ namespace ReportService
 {
     public partial class PrintFormView : Form, IPrintFormView
     {
+        private ReportDocument report;
         public PrintFormView()
         {
             InitializeComponent();
-            AssociateAndRaiseViewEvents();
         }
-
-        private void AssociateAndRaiseViewEvents()
-        {
-            print.Click += delegate {
-                Print?.Invoke(this, EventArgs.Empty);
-            };
-            export_pdf.Click += delegate {
-                ExportPDF?.Invoke(this, EventArgs.Empty);
-            };
-            refresh.Click += delegate {
-                RefreshTemplate?.Invoke(this, EventArgs.Empty);
-            };
-        }
-
-        public event EventHandler RefreshTemplate;
-        public event EventHandler Print;
-        public event EventHandler ExportPDF;
 
         private static PrintFormView instance;
+
+        ReportDocument IPrintFormView.reprotDocument
+        { 
+            get => report;
+            set
+            {
+                report = value;
+                crystalReportViewer1.ReportSource = report;
+            }
+        }
+
         public static PrintFormView GetInstace(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
@@ -60,6 +54,38 @@ namespace ReportService
         private void close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void export_pdf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                report.PrintOptions.PrinterName = "Microsoft Print to PDF";
+                report.PrintToPrinter(1, true, 1, 1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                crystalReportViewer1.ReportSource = report;
+                crystalReportViewer1.Refresh();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void print_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            crystalReportViewer1.PrintReport();
+            this.Cursor = Cursors.Default;
         }
     }
 }

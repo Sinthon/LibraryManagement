@@ -13,7 +13,6 @@ namespace LibraryManagement.Views.Books.Dialog
         int Id { get; set; }
         string Title { get; set; }
         int Page { get; set; }
-        string Type { get; set; }
         DateTime PublicDate { get; set; }
         string Publisher { get; set; }
         int Categiry_Id { get; set; }

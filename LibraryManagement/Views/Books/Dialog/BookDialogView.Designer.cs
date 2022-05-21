@@ -39,9 +39,7 @@ namespace LibraryManagement.Views.Books.Dialog
             this.label1 = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.page = new System.Windows.Forms.TextBox();
-            this.type = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.publisher = new System.Windows.Forms.TextBox();
@@ -84,7 +82,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // category
             // 
             this.category.FormattingEnabled = true;
-            this.category.Location = new System.Drawing.Point(87, 178);
+            this.category.Location = new System.Drawing.Point(307, 138);
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(142, 21);
             this.category.TabIndex = 11;
@@ -93,7 +91,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // 
             this.cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancel.Location = new System.Drawing.Point(19, 280);
+            this.cancel.Location = new System.Drawing.Point(19, 240);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(100, 25);
             this.cancel.TabIndex = 10;
@@ -112,7 +110,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 181);
+            this.label2.Location = new System.Drawing.Point(247, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 9;
@@ -144,15 +142,6 @@ namespace LibraryManagement.Views.Books.Dialog
             this.label4.TabIndex = 8;
             this.label4.Text = "Page";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 107);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Type";
-            // 
             // page
             // 
             this.page.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -161,14 +150,6 @@ namespace LibraryManagement.Views.Books.Dialog
             this.page.Size = new System.Drawing.Size(142, 20);
             this.page.TabIndex = 12;
             this.page.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
-            // 
-            // type
-            // 
-            this.type.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.type.Location = new System.Drawing.Point(307, 104);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(142, 20);
-            this.type.TabIndex = 12;
             // 
             // label6
             // 
@@ -182,7 +163,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(247, 143);
+            this.label7.Location = new System.Drawing.Point(247, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 8;
@@ -191,7 +172,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // publisher
             // 
             this.publisher.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.publisher.Location = new System.Drawing.Point(307, 141);
+            this.publisher.Location = new System.Drawing.Point(307, 102);
             this.publisher.Name = "publisher";
             this.publisher.Size = new System.Drawing.Size(142, 20);
             this.publisher.TabIndex = 12;
@@ -200,7 +181,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // 
             this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Location = new System.Drawing.Point(349, 280);
+            this.save.Location = new System.Drawing.Point(349, 240);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(100, 25);
             this.save.TabIndex = 10;
@@ -220,7 +201,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // 
             this.ErrorMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.ErrorMessage.Location = new System.Drawing.Point(19, 214);
+            this.ErrorMessage.Location = new System.Drawing.Point(19, 174);
             this.ErrorMessage.Name = "ErrorMessage";
             this.ErrorMessage.ReadOnly = true;
             this.ErrorMessage.Size = new System.Drawing.Size(430, 52);
@@ -231,16 +212,14 @@ namespace LibraryManagement.Views.Books.Dialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 321);
+            this.ClientSize = new System.Drawing.Size(464, 281);
             this.Controls.Add(this.ErrorMessage);
             this.Controls.Add(this.publish_date);
             this.Controls.Add(this.publisher);
-            this.Controls.Add(this.type);
             this.Controls.Add(this.page);
             this.Controls.Add(this.title);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.id);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.category);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
@@ -251,9 +230,9 @@ namespace LibraryManagement.Views.Books.Dialog
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(480, 360);
+            this.MaximumSize = new System.Drawing.Size(480, 320);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(480, 360);
+            this.MinimumSize = new System.Drawing.Size(480, 320);
             this.Name = "BookDialogView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panel1.ResumeLayout(false);
@@ -275,9 +254,7 @@ namespace LibraryManagement.Views.Books.Dialog
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox title;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox page;
-        private System.Windows.Forms.TextBox type;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox publisher;

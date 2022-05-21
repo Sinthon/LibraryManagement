@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,8 @@ namespace ReportService.Presenters
 {
     public interface IPrintFormView
     {
-        event EventHandler Print;
-        event EventHandler ExportPDF;
-        event EventHandler RefreshTemplate;
-
+        ReportDocument reprotDocument { get; set; }
+        void Show();
+        void Hide();
     }
 }

@@ -104,6 +104,7 @@ namespace ReportService
             this.print.TabIndex = 2;
             this.print.Text = "Print";
             this.print.UseVisualStyleBackColor = true;
+            this.print.Click += new System.EventHandler(this.print_Click);
             // 
             // export_pdf
             // 
@@ -115,6 +116,7 @@ namespace ReportService
             this.export_pdf.TabIndex = 1;
             this.export_pdf.Text = "Export PDF";
             this.export_pdf.UseVisualStyleBackColor = true;
+            this.export_pdf.Click += new System.EventHandler(this.export_pdf_Click);
             // 
             // panel4
             // 
@@ -155,6 +157,7 @@ namespace ReportService
             this.refresh.TabIndex = 5;
             this.refresh.Text = "Refresh";
             this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // label1
             // 

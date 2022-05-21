@@ -19,6 +19,8 @@ using LibraryManagement.Views.Librarian;
 using LibraryManagement.Views.Category.Dialog;
 using ReportService.Presenters;
 using LibraryManagement.Views.Setting;
+using ReportService;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace LibraryManagement.Presenters
 {
@@ -41,8 +43,21 @@ namespace LibraryManagement.Presenters
 
         private void ShowBorrowBook(object sender, EventArgs e)
         {
-            //IPrintFormRepository repository = new PrintFormRepository(connectionString);
-            //IPrintFormView printFormView = PrintFormView.GetInstace((Form)_mainview);
+            ReportDocument report = new ReportDocument();
+            report.Load("Reporting/CrystalReport1.rpt");
+            IPrintFormView printFormView = PrintFormView.GetInstace((Form)_mainview);
+            printFormView.reprotDocument = report;
+            printFormView.Show();
+
+            //dtCompany = CSQBPreferences.GetPreference();
+            //dsReport.Tables.Add(CSQBTransferInventories.GetVTransferInventory(txnid, templatefile));
+            ////dsReport.Tables.Add(CSQBPrintFormOptions.GetPrintFormOption(eventtype, ""));
+            //dtCompany.TableName = "ReportHeader";
+            //dsReport.Tables[0].TableName = "VTransferInventory";
+            ////dsReport.Tables[1].TableName = "PrintOption";
+            //dtCompany.WriteXml(Path.GetDirectoryName(templatefile) + "\\ReportHeader.xml", XmlWriteMode.WriteSchema);
+            //dsReport.WriteXml(Path.GetDirectoryName(templatefile) + "\\TransferInventory.xml", XmlWriteMode.WriteSchema);
+            //report.Load(templatefile);
             //printFormView.Show();
             //PrintFormPresenter.GetInstance();
         }
