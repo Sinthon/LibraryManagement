@@ -69,7 +69,7 @@ namespace LibraryManagement.Views.Books.Dialog
             get => ErrorMessage.Text;
             set => ErrorMessage.Text = value;
         }
-
+        
         public bool IsEdit
         {
             get => isedit;

@@ -38,7 +38,7 @@ namespace LibraryManagement.Repositories
             {
                 connecion.Open();
                 command.Connection = connecion;
-                command.CommandText = " ";
+                command.CommandText = "SELECT * FROM TBLLYBRARY";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())

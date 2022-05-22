@@ -31,6 +31,9 @@ namespace LibraryManagement.Views.Layout
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.setting = new LibraryManagement.Controls.CustomButton();
+            this.customButton1 = new LibraryManagement.Controls.CustomButton();
             this.librarian = new LibraryManagement.Controls.CustomButton();
             this.returnbook = new LibraryManagement.Controls.CustomButton();
             this.borrow = new LibraryManagement.Controls.CustomButton();
@@ -39,9 +42,6 @@ namespace LibraryManagement.Views.Layout
             this.author = new LibraryManagement.Controls.CustomButton();
             this.book = new LibraryManagement.Controls.CustomButton();
             this.dashboard = new LibraryManagement.Controls.CustomButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.setting = new LibraryManagement.Controls.CustomButton();
-            this.customButton1 = new LibraryManagement.Controls.CustomButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,56 @@ namespace LibraryManagement.Views.Layout
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(240, 682);
             this.panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.setting);
+            this.panel3.Controls.Add(this.customButton1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 596);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(240, 123);
+            this.panel3.TabIndex = 3;
+            // 
+            // setting
+            // 
+            this.setting.BackColor = System.Drawing.Color.Transparent;
+            this.setting.BackgroundColor = System.Drawing.Color.Transparent;
+            this.setting.BorderColor = System.Drawing.Color.Transparent;
+            this.setting.BorderRadius = 0;
+            this.setting.BorderSize = 0;
+            this.setting.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.setting.FlatAppearance.BorderSize = 0;
+            this.setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.setting.ForeColor = System.Drawing.Color.Black;
+            this.setting.Location = new System.Drawing.Point(0, 43);
+            this.setting.Name = "setting";
+            this.setting.Size = new System.Drawing.Size(240, 40);
+            this.setting.TabIndex = 4;
+            this.setting.Text = "SETTINGS";
+            this.setting.TextColor = System.Drawing.Color.Black;
+            this.setting.UseVisualStyleBackColor = false;
+            this.setting.Visible = false;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.Transparent;
+            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.customButton1.BorderRadius = 0;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.Black;
+            this.customButton1.Location = new System.Drawing.Point(0, 83);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(240, 40);
+            this.customButton1.TabIndex = 3;
+            this.customButton1.Text = "LOGOUT";
+            this.customButton1.TextColor = System.Drawing.Color.Black;
+            this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Visible = false;
             // 
             // librarian
             // 
@@ -223,54 +273,6 @@ namespace LibraryManagement.Views.Layout
             this.dashboard.Text = "DASHBOARD";
             this.dashboard.TextColor = System.Drawing.Color.Black;
             this.dashboard.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.setting);
-            this.panel3.Controls.Add(this.customButton1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 596);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(240, 123);
-            this.panel3.TabIndex = 3;
-            // 
-            // setting
-            // 
-            this.setting.BackColor = System.Drawing.Color.Transparent;
-            this.setting.BackgroundColor = System.Drawing.Color.Transparent;
-            this.setting.BorderColor = System.Drawing.Color.Transparent;
-            this.setting.BorderRadius = 0;
-            this.setting.BorderSize = 0;
-            this.setting.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.setting.FlatAppearance.BorderSize = 0;
-            this.setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.setting.ForeColor = System.Drawing.Color.Black;
-            this.setting.Location = new System.Drawing.Point(0, 43);
-            this.setting.Name = "setting";
-            this.setting.Size = new System.Drawing.Size(240, 40);
-            this.setting.TabIndex = 4;
-            this.setting.Text = "SETTINGS";
-            this.setting.TextColor = System.Drawing.Color.Black;
-            this.setting.UseVisualStyleBackColor = false;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.Transparent;
-            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderRadius = 0;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(0, 83);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(240, 40);
-            this.customButton1.TabIndex = 3;
-            this.customButton1.Text = "LOGOUT";
-            this.customButton1.TextColor = System.Drawing.Color.Black;
-            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // SideBarMenu
             // 

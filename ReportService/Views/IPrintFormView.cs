@@ -12,5 +12,6 @@ namespace ReportService.Presenters
         ReportDocument reprotDocument { get; set; }
         void Show();
         void Hide();
+        void Refresh();
     }
 }

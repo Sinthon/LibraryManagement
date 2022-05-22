@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibraryManagement.Controls;
+using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,7 +68,35 @@ namespace LibraryManagement.Views.Librarian
 
         public void SetBindingSource(BindingSource bindingSource)
         {
-            dataGridView1.DataSource = bindingSource;
+            foreach (var lb in bindingSource)
+            {
+                CustomButton button = new CustomButton();
+                button.BackColor = Color.Transparent;
+                button.BackgroundColor = Color.Transparent;
+                button.BorderColor = Color.DimGray;
+                button.Cursor = Cursors.Hand;
+                button.Dock = DockStyle.Top;
+                button.FlatAppearance.BorderSize = 0;
+                button.FlatStyle = FlatStyle.Flat;
+                button.ForeColor = Color.DimGray;
+                button.Text = (lb as LibrarianModel).Name.ToUpper();
+                button.TextColor = Color.DimGray;
+                button.UseVisualStyleBackColor = false;
+                button.Click += delegate
+                {
+                    SetLibrarian(lb as LibrarianModel);
+                };
+
+                panel8.Controls.Add(button);
+            }
+
+            SetLibrarian(bindingSource.Current as LibrarianModel);
+        }
+
+        public void SetLibrarian(LibrarianModel model)
+        {
+            label4.Text = model.Name;
+            var test = model.Photo;
         }
     }
 }

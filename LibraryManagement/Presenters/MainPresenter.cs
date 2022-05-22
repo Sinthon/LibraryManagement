@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryManagement.Views.Login;
 using LibraryManagement.Views.Main;
@@ -17,10 +13,12 @@ using LibraryManagement.Views.Author;
 using LibraryManagement.Views.Author.Dialog;
 using LibraryManagement.Views.Librarian;
 using LibraryManagement.Views.Category.Dialog;
-using ReportService.Presenters;
 using LibraryManagement.Views.Setting;
-using ReportService;
+using LibraryManagement.Views.Library_Preferent;
 using CrystalDecisions.CrystalReports.Engine;
+using System.Data;
+using ReportService.Presenters;
+using ReportService;
 
 namespace LibraryManagement.Presenters
 {
@@ -30,6 +28,7 @@ namespace LibraryManagement.Presenters
         private IMainView _mainview;
         private ISideBarMenu _sideBar;
         private IDashboardView _dashboard;
+
 
         public IBookDailog BookDialog { get; private set; }
 
@@ -43,23 +42,31 @@ namespace LibraryManagement.Presenters
 
         private void ShowBorrowBook(object sender, EventArgs e)
         {
-            ReportDocument report = new ReportDocument();
-            report.Load("Reporting/CrystalReport1.rpt");
-            IPrintFormView printFormView = PrintFormView.GetInstace((Form)_mainview);
-            printFormView.reprotDocument = report;
-            printFormView.Show();
 
-            //dtCompany = CSQBPreferences.GetPreference();
-            //dsReport.Tables.Add(CSQBTransferInventories.GetVTransferInventory(txnid, templatefile));
-            ////dsReport.Tables.Add(CSQBPrintFormOptions.GetPrintFormOption(eventtype, ""));
-            //dtCompany.TableName = "ReportHeader";
-            //dsReport.Tables[0].TableName = "VTransferInventory";
-            ////dsReport.Tables[1].TableName = "PrintOption";
-            //dtCompany.WriteXml(Path.GetDirectoryName(templatefile) + "\\ReportHeader.xml", XmlWriteMode.WriteSchema);
-            //dsReport.WriteXml(Path.GetDirectoryName(templatefile) + "\\TransferInventory.xml", XmlWriteMode.WriteSchema);
-            //report.Load(templatefile);
-            //printFormView.Show();
-            //PrintFormPresenter.GetInstance();
+            ReportDocument report = new ReportDocument();
+            DataTable table_report;
+            DataTable table_header;
+            IBorrowBookRepository borrowbook_repository = new BorrowBookRepository(connectionString);
+            IAuthRepository auth_repository = new AuthRepository(connectionString);
+            IPrintFormView printFormView = PrintFormView.GetInstace((Form)_mainview);
+            try
+            {
+                table_report = borrowbook_repository.GetReprot(new string[] { "1" });
+                table_report.WriteXml("Reporting/VIEW_BORROW_BOOK.xml", XmlWriteMode.WriteSchema);
+
+                table_header = auth_repository.GetPreference();
+                table_header.WriteXml("Reporting/REPORT_HEADER.xml", XmlWriteMode.WriteSchema);
+
+                report.Load("Reporting/LibraryReprot.rpt");
+                report.Database.Tables[0].SetDataSource(table_report);
+                printFormView.reprotDocument = report;
+                printFormView.Refresh();
+                printFormView.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ShowLibrarian(object sender, EventArgs e)
@@ -101,6 +108,15 @@ namespace LibraryManagement.Presenters
             _sideBar.ShowLibrarian += ShowLibrarian;
             _sideBar.ShowBorrowBook += ShowBorrowBook;
             _sideBar.ShowSetting += ShowSetting;
+
+            _mainview.ShowPreference += ShowPreference;
+        }
+
+        private void ShowPreference(object sender, EventArgs e)
+        {
+            ILiraryPreferentView libraryview = LiraryPreferentView.GetInstnace();
+            PreferencePresenter.GetInstance(libraryview, connectionString);
+            libraryview.Show((Form)_mainview);
         }
 
         private void ShowSetting(object sender, EventArgs e)

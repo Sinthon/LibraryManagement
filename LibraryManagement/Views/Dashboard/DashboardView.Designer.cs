@@ -48,18 +48,6 @@ namespace LibraryManagement.Views.Dashboard
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.Author = new LibraryManagement.Controls.CustomButton();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.Return = new LibraryManagement.Controls.CustomButton();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.Borrow = new LibraryManagement.Controls.CustomButton();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.Book = new LibraryManagement.Controls.CustomButton();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -72,20 +60,24 @@ namespace LibraryManagement.Views.Dashboard
             this.panel21 = new System.Windows.Forms.Panel();
             this.customButton4 = new LibraryManagement.Controls.CustomButton();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.Author = new LibraryManagement.Controls.CustomButton();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.Return = new LibraryManagement.Controls.CustomButton();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.Borrow = new LibraryManagement.Controls.CustomButton();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.Book = new LibraryManagement.Controls.CustomButton();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -94,6 +86,14 @@ namespace LibraryManagement.Views.Dashboard
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -301,6 +301,182 @@ namespace LibraryManagement.Views.Dashboard
             this.panel8.Size = new System.Drawing.Size(650, 606);
             this.panel8.TabIndex = 30;
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.panel17);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(0, 203);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(650, 203);
+            this.panel16.TabIndex = 1;
+            // 
+            // panel17
+            // 
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Controls.Add(this.tableLayoutPanel2);
+            this.panel17.Controls.Add(this.panel22);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(650, 183);
+            this.panel17.TabIndex = 2;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.panel18, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel19, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel20, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel21, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 32);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(648, 150);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.customButton1);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel18.Location = new System.Drawing.Point(489, 3);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(156, 144);
+            this.panel18.TabIndex = 3;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.Transparent;
+            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton1.BorderRadius = 3;
+            this.customButton1.BorderSize = 1;
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.DimGray;
+            this.customButton1.Location = new System.Drawing.Point(0, 0);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(156, 144);
+            this.customButton1.TabIndex = 1;
+            this.customButton1.Text = "CATEGORY";
+            this.customButton1.TextColor = System.Drawing.Color.DimGray;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.customButton2);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel19.Location = new System.Drawing.Point(327, 3);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(156, 144);
+            this.panel19.TabIndex = 2;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.Transparent;
+            this.customButton2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton2.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton2.BorderRadius = 3;
+            this.customButton2.BorderSize = 1;
+            this.customButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.DimGray;
+            this.customButton2.Location = new System.Drawing.Point(0, 0);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(156, 144);
+            this.customButton2.TabIndex = 1;
+            this.customButton2.Text = "BOOK";
+            this.customButton2.TextColor = System.Drawing.Color.DimGray;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.customButton3);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(165, 3);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(156, 144);
+            this.panel20.TabIndex = 1;
+            // 
+            // customButton3
+            // 
+            this.customButton3.BackColor = System.Drawing.Color.Transparent;
+            this.customButton3.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton3.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton3.BorderRadius = 3;
+            this.customButton3.BorderSize = 1;
+            this.customButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.ForeColor = System.Drawing.Color.DimGray;
+            this.customButton3.Location = new System.Drawing.Point(0, 0);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(156, 144);
+            this.customButton3.TabIndex = 1;
+            this.customButton3.Text = "RETURN BOOK";
+            this.customButton3.TextColor = System.Drawing.Color.DimGray;
+            this.customButton3.UseVisualStyleBackColor = false;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.customButton4);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel21.Location = new System.Drawing.Point(3, 3);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(156, 144);
+            this.panel21.TabIndex = 0;
+            // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.Color.Transparent;
+            this.customButton4.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton4.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton4.BorderRadius = 3;
+            this.customButton4.BorderSize = 1;
+            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.ForeColor = System.Drawing.Color.DimGray;
+            this.customButton4.Location = new System.Drawing.Point(0, 0);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(156, 144);
+            this.customButton4.TabIndex = 0;
+            this.customButton4.Text = "BORROW BOOK";
+            this.customButton4.TextColor = System.Drawing.Color.DimGray;
+            this.customButton4.UseVisualStyleBackColor = false;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel22.Controls.Add(this.label7);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Location = new System.Drawing.Point(0, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(648, 32);
+            this.panel22.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(5, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "label7";
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.panel10);
@@ -466,171 +642,6 @@ namespace LibraryManagement.Views.Dashboard
             this.panel15.Size = new System.Drawing.Size(648, 32);
             this.panel15.TabIndex = 0;
             // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.panel17);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(0, 203);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(650, 203);
-            this.panel16.TabIndex = 1;
-            // 
-            // panel17
-            // 
-            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Controls.Add(this.tableLayoutPanel2);
-            this.panel17.Controls.Add(this.panel22);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 0);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(650, 183);
-            this.panel17.TabIndex = 2;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.panel18, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel19, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel20, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel21, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 32);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(648, 150);
-            this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.customButton1);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(489, 3);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(156, 144);
-            this.panel18.TabIndex = 3;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.Transparent;
-            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton1.BorderRadius = 3;
-            this.customButton1.BorderSize = 1;
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.DimGray;
-            this.customButton1.Location = new System.Drawing.Point(0, 0);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(156, 144);
-            this.customButton1.TabIndex = 1;
-            this.customButton1.Text = "AUTHORS";
-            this.customButton1.TextColor = System.Drawing.Color.DimGray;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.customButton2);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel19.Location = new System.Drawing.Point(327, 3);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(156, 144);
-            this.panel19.TabIndex = 2;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.Transparent;
-            this.customButton2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton2.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton2.BorderRadius = 3;
-            this.customButton2.BorderSize = 1;
-            this.customButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.DimGray;
-            this.customButton2.Location = new System.Drawing.Point(0, 0);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(156, 144);
-            this.customButton2.TabIndex = 1;
-            this.customButton2.Text = "RETURN BOOKS";
-            this.customButton2.TextColor = System.Drawing.Color.DimGray;
-            this.customButton2.UseVisualStyleBackColor = false;
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.customButton3);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel20.Location = new System.Drawing.Point(165, 3);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(156, 144);
-            this.panel20.TabIndex = 1;
-            // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.Color.Transparent;
-            this.customButton3.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton3.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton3.BorderRadius = 3;
-            this.customButton3.BorderSize = 1;
-            this.customButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.DimGray;
-            this.customButton3.Location = new System.Drawing.Point(0, 0);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(156, 144);
-            this.customButton3.TabIndex = 1;
-            this.customButton3.Text = "BORROW BOOK";
-            this.customButton3.TextColor = System.Drawing.Color.DimGray;
-            this.customButton3.UseVisualStyleBackColor = false;
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.customButton4);
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel21.Location = new System.Drawing.Point(3, 3);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(156, 144);
-            this.panel21.TabIndex = 0;
-            // 
-            // customButton4
-            // 
-            this.customButton4.BackColor = System.Drawing.Color.Transparent;
-            this.customButton4.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton4.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton4.BorderRadius = 3;
-            this.customButton4.BorderSize = 1;
-            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.ForeColor = System.Drawing.Color.DimGray;
-            this.customButton4.Location = new System.Drawing.Point(0, 0);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Size = new System.Drawing.Size(156, 144);
-            this.customButton4.TabIndex = 0;
-            this.customButton4.Text = "BOOKS";
-            this.customButton4.TextColor = System.Drawing.Color.DimGray;
-            this.customButton4.UseVisualStyleBackColor = false;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel22.Controls.Add(this.label7);
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Location = new System.Drawing.Point(0, 0);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(648, 32);
-            this.panel22.TabIndex = 0;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -641,17 +652,6 @@ namespace LibraryManagement.Views.Dashboard
             this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "label4";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(5, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "label7";
             // 
             // DashboardView
             // 
@@ -672,15 +672,6 @@ namespace LibraryManagement.Views.Dashboard
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -690,6 +681,15 @@ namespace LibraryManagement.Views.Dashboard
             this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }

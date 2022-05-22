@@ -29,7 +29,7 @@ namespace ReportService
             set
             {
                 report = value;
-                crystalReportViewer1.ReportSource = report;
+                crystalReportViewer1.ReportSource = value;
             }
         }
 
@@ -73,7 +73,6 @@ namespace ReportService
         {
             try
             {
-                crystalReportViewer1.ReportSource = report;
                 crystalReportViewer1.Refresh();
             }catch(Exception ex)
             {
@@ -84,8 +83,16 @@ namespace ReportService
         private void print_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            crystalReportViewer1.PrintReport();
-            this.Cursor = Cursors.Default;
+            try
+            {
+                crystalReportViewer1.PrintReport();
+                this.Cursor = Cursors.Default;
+            }
+            catch(Exception ex)
+            {                
+                this.Cursor = Cursors.Default;
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

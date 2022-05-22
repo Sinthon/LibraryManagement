@@ -17,6 +17,24 @@ namespace LibraryManagement.Repositories
             this.connectionString = connectionString;
         }
 
+        public DataTable GetPreference()
+        {
+            DataTable table = new DataTable();
+            string sql = "SELECT * FROM TBLLYBRARY";
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                using (OracleDataAdapter adapter = new OracleDataAdapter(sql, connection))
+                {
+                    adapter.Fill(table);
+                    table.TableName = "REPORT_HEADER";
+                }
+                connection.Close();
+            }
+            return table;
+        }
+
         public void Login(AuthModel model)
         {   
             using (OracleConnection connection = new OracleConnection(connectionString))

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace LibraryManagement.Views.Librarian
         void Show();
 
         void SetBindingSource(BindingSource bindingSource);
+        void SetLibrarian(LibrarianModel model);
     }
 }

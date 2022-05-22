@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Windows.Forms;
 
 namespace LibraryManagement.Repositories
 {
@@ -50,25 +51,27 @@ namespace LibraryManagement.Repositories
         }
         public void Edit(BookModel model)
         {
-            var sql = @"UPDATE tblbook SET booktitle = :v1, bookpage = :v2, publishdate = :v3,publisher = :v4,categoryid = :v5 WHERE bookid = :v0";
-            using (var connection = new OracleConnection(connectionString))
-            using (var command = new OracleCommand())
-            {
-                if (connection.State == ConnectionState.Closed)
-                    connection.Open();
+            MessageBox.Show(model.Publisdate.ToString());
 
-                command.Connection = connection;
-                command.CommandText = sql;
-                command.CommandType = CommandType.Text;
-                command.Parameters.Add(new OracleParameter("v0", model.Id));
-                command.Parameters.Add(new OracleParameter("v1", model.Title));
-                command.Parameters.Add(new OracleParameter("v2", model.Page));
-                command.Parameters.Add(new OracleParameter("v3", model.Publisdate));
-                command.Parameters.Add(new OracleParameter("v4", model.Publisher));
-                command.Parameters.Add(new OracleParameter("v5", Convert.ToInt32(model.Category_id)));
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
+            //var sql = @"UPDATE TBLBOOK SET BOOKTITLE = :v1, BOOKPAGE = :v2, publishdate = TO_DATE( :v3, 'DD-MM-YYYY'), publisher = :v4,categoryid = :v5 WHERE bookid = :v0";
+            //using (var connection = new OracleConnection(connectionString))
+            //using (var command = new OracleCommand())
+            //{
+            //    if (connection.State == ConnectionState.Closed)
+            //        connection.Open();
+
+            //    command.Connection = connection;
+            //    command.CommandText = sql;
+            //    command.CommandType = CommandType.Text;
+            //    command.Parameters.Add(new OracleParameter("v0", model.Id));
+            //    command.Parameters.Add(new OracleParameter("v1", model.Title));
+            //    command.Parameters.Add(new OracleParameter("v2", model.Page));
+            //    command.Parameters.Add(new OracleParameter("v3", model.Publisdate));
+            //    command.Parameters.Add(new OracleParameter("v4", model.Publisher));
+            //    command.Parameters.Add(new OracleParameter("v5", Convert.ToInt32(model.Category_id)));
+            //    command.ExecuteNonQuery();
+            //    connection.Close();
+            //}
         }
         public IEnumerable<BookModel> GetAll()
         {

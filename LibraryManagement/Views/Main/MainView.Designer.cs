@@ -31,6 +31,7 @@ namespace LibraryManagement.Views.Main
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.libraryInforToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,7 @@ namespace LibraryManagement.Views.Main
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuStrip.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.windowToolStripMenuItem,
             this.viewToolStripMenuItem,
@@ -53,9 +54,17 @@ namespace LibraryManagement.Views.Main
             // 
             // windowToolStripMenuItem
             // 
+            this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.libraryInforToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.windowToolStripMenuItem.Text = "System";
+            // 
+            // libraryInforToolStripMenuItem
+            // 
+            this.libraryInforToolStripMenuItem.Name = "libraryInforToolStripMenuItem";
+            this.libraryInforToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.libraryInforToolStripMenuItem.Text = "Library Preferece";
             // 
             // viewToolStripMenuItem
             // 
@@ -84,6 +93,7 @@ namespace LibraryManagement.Views.Main
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainView";
+            this.ShowIcon = false;
             this.Text = "LibraryMangement";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResizeEnd += new System.EventHandler(this.Event_ResizeEnd);
@@ -101,6 +111,7 @@ namespace LibraryManagement.Views.Main
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem libraryInforToolStripMenuItem;
     }
 }
 

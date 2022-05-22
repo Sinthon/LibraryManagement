@@ -19,7 +19,10 @@ namespace LibraryManagement.Views.Main
         public MainView()
         {
             InitializeComponent();
-            AssociateAndRaiseViewEvents();
+            Load += delegate
+            {
+                SetUp?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         private void Event_ResizeEnd(object sender, EventArgs e)
@@ -28,14 +31,6 @@ namespace LibraryManagement.Views.Main
             {
                 (sender as Form).WindowState = FormWindowState.Maximized;
             }
-        }
-
-        private void AssociateAndRaiseViewEvents()
-        {
-            Load += delegate
-            {
-                SetUp?.Invoke(this, EventArgs.Empty);
-            };
         }
 
         private static MainView instance;
@@ -59,13 +54,18 @@ namespace LibraryManagement.Views.Main
         {   
             this.Controls.Add(SideBarMenu.GetInstance());
             this.Controls.Add(this.menuStrip);
+            AssociateAndRaiseViewEvents();
+        }
+
+        private void AssociateAndRaiseViewEvents()
+        {
+            libraryInforToolStripMenuItem.Click += delegate
+            {
+                ShowPreference?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public event EventHandler SetUp;
-
-        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        public event EventHandler ShowPreference;
     }
 }

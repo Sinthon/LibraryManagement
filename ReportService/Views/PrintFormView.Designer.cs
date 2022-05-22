@@ -18,7 +18,6 @@ namespace ReportService
 
         private void InitializeComponent()
         {
-            this.CrystalReport11 = new ReportService.CrystalReport1();
             this.panel3 = new System.Windows.Forms.Panel();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -51,13 +50,13 @@ namespace ReportService
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.EnableDrillDown = false;
             this.crystalReportViewer1.Location = new System.Drawing.Point(15, 38);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReport11;
             this.crystalReportViewer1.ShowCloseButton = false;
             this.crystalReportViewer1.ShowCopyButton = false;
             this.crystalReportViewer1.ShowGotoPageButton = false;
@@ -186,7 +185,6 @@ namespace ReportService
         }
 
         #endregion
-        private CrystalReport1 CrystalReport11;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button refresh;

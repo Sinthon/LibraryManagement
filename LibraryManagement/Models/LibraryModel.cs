@@ -15,6 +15,8 @@ namespace LibraryManagement.Models
         private string website;
         private string phone;
         private string email;
+        private string address;
+
         private Byte logo;
 
         [DisplayName("ID")]
@@ -42,6 +44,11 @@ namespace LibraryManagement.Models
         public string Email { 
             get => email; 
             set => email = value; 
+        }
+        public string Address
+        {
+            get => address;
+            set => address = value;
         }
         public byte Logo { 
             get => logo; 

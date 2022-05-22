@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using LibraryManagement.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +36,18 @@ namespace LibraryManagement.Views.Setting
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        private void SettingView_Load(object sender, EventArgs e)
+        {
+            DataTable table;
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))) (CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = ORCL))); User Id = LB_DB; Password = 123456; ";
+
+            IBorrowBookRepository repository = new BorrowBookRepository(connectionString);
+            table = repository.GetReprot(new string[] { "1" });
+            table.WriteXml("Reporting/VIEW_BORROW_BOOK.xml", XmlWriteMode.WriteSchema);
+
+            dataGridView1.DataSource = table;
         }
     }
 }

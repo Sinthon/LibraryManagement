@@ -191,6 +191,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // publish_date
             // 
             this.publish_date.AccessibleRole = System.Windows.Forms.AccessibleRole.PropertyPage;
+            this.publish_date.CustomFormat = "dd-mm-yyyy";
             this.publish_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.publish_date.Location = new System.Drawing.Point(87, 141);
             this.publish_date.Name = "publish_date";
@@ -234,6 +235,8 @@ namespace LibraryManagement.Views.Books.Dialog
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(480, 320);
             this.Name = "BookDialogView";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

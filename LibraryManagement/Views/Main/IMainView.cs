@@ -9,6 +9,7 @@ namespace LibraryManagement.Views.Main
     interface IMainView
     {
         event EventHandler SetUp;
+        event EventHandler ShowPreference;
         void IitialComponent();
         void Close();
     }
