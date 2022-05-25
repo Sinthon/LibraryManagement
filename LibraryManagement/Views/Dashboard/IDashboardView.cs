@@ -1,8 +1,10 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LibraryManagement.Views.Dashboard
 {
@@ -15,9 +17,12 @@ namespace LibraryManagement.Views.Dashboard
         string Company_website { get; set; }
 
         event EventHandler ShowBooks;
-        event EventHandler ShowBorrow;
+        event EventHandler ShowBorrowBook;
+        event EventHandler ShowBorrower;
         event EventHandler ShowReturn;
         event EventHandler ShowAuthor;
+
+        void SetPreference(LibraryModel bindingsource);
 
         void Show();
     }

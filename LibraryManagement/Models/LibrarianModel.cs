@@ -19,6 +19,10 @@ namespace LibraryManagement.Models
         private byte photo;
         private string password;
 
+        public LibrarianModel()
+        {
+
+        }
 
         [DisplayName("ID")]
         [Required(ErrorMessage = "ID is requerid")]

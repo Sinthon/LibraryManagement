@@ -22,6 +22,6 @@ namespace LibraryManagement.Views.Category.Dialog
         event EventHandler Cancel;
 
         void Show(Form parentContainer);
-        void Hide();
+        void Close();
     }
 }

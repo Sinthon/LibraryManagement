@@ -28,6 +28,6 @@ namespace LibraryManagement.Views.Books.Dialog
         void CategoriessBindingSource(BindingSource categories);
 
         void Show(Form parentContainer);
-        void Hide();
+        void Close();
     }
 }

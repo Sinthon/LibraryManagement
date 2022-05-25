@@ -125,9 +125,9 @@ namespace LibraryManagement.Views.Books
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 24);
+            this.label1.Size = new System.Drawing.Size(57, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Book Center";
+            this.label1.Text = "Book";
             // 
             // panel4
             // 
@@ -247,7 +247,8 @@ namespace LibraryManagement.Views.Books
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Name = "BookView";
-            this.Text = "BookView";
+            this.ShowIcon = false;
+            this.Text = "Book";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);

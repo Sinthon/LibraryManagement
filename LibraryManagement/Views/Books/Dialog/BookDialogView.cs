@@ -73,7 +73,10 @@ namespace LibraryManagement.Views.Books.Dialog
         public bool IsEdit
         {
             get => isedit;
-            set => isedit = value;
+            set {
+                isedit = value;
+                id.Enabled = !isedit;
+            }
         }
 
         public string DialogTitle

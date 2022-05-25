@@ -54,7 +54,7 @@ namespace LibraryManagement.Repositories
 
         public void Edit(CategoryModel model)
         {
-            string sql = "UPDATE tblcategory SET CATEGORYNAME= :v1, CAT_DESC= :v2 WHERE CATEGORYID= :v3";
+            string sql = "UPDATE TBLCATEGORY SET CATEGORYID = TO_NUMBER(:v0), CATEGORYNAME= :v1, CAT_DESC= :v2 WHERE CATEGORYID = TO_NUMBER(:v0)";
             using (var connection = new OracleConnection(connectionString))
             using (var command = new OracleCommand())
             {
@@ -62,9 +62,9 @@ namespace LibraryManagement.Repositories
                     connection.Open();
                 command.Connection = connection;
                 command.CommandText = sql;
+                command.Parameters.Add(new OracleParameter("v0", model.Id));
                 command.Parameters.Add(new OracleParameter("v1", model.Name));
                 command.Parameters.Add(new OracleParameter("v2", model.Description));
-                command.Parameters.Add(new OracleParameter("v3", model.Id));
                 command.ExecuteNonQuery();
                 connection.Close();
             }

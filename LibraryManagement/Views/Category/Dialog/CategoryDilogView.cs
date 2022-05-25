@@ -38,7 +38,10 @@ namespace LibraryManagement.Views.Category.Dialog
         }
         public bool IsEdit { 
             get => isedit;
-            set => isedit = value;
+            set { 
+                isedit = value;
+                id.Enabled = !isedit;
+            }
         }
         public string DialogTitle { 
             get => dialogtitle.Text; 

@@ -20,7 +20,7 @@ namespace LibraryManagement.Repositories
         public DataTable GetPreference()
         {
             DataTable table = new DataTable();
-            string sql = "SELECT * FROM TBLLYBRARY";
+            string sql = "SELECT * FROM TBLLYBRARY FETCH FIRST 1 ROWS ONLY";
             using (OracleConnection connection = new OracleConnection(connectionString))
             {
                 if (connection.State == ConnectionState.Closed)

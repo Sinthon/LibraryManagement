@@ -78,12 +78,12 @@ namespace LibraryManagement.Presenters
             try
             {
                 categorylist = _repository.GetAll();
+                CategoryBindingSource.DataSource = categorylist;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            CategoryBindingSource.DataSource = categorylist;
         }
 
         private void EditCategory(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace LibraryManagement.Presenters
 
         private void Cancel(object sender, EventArgs e)
         {
-            _dialog.Hide();
+            _dialog.Close();
         }
 
         private void Save(object sender, EventArgs e)
@@ -120,12 +120,12 @@ namespace LibraryManagement.Presenters
                 else
                     _repository.Add(model);
 
-                _dialog.Hide();
-
-                
+                _dialog.Close();
+                ReloadList(sender, e);
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 _dialog.ErrorMessages = ex.Message;
             }
         }

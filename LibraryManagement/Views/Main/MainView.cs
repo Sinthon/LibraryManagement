@@ -1,6 +1,4 @@
-﻿using LibraryManagement.Presenters;
-using LibraryManagement.Views.Layout;
-using LibraryManagement.Views.Login;
+﻿using LibraryManagement.Views.Layout;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +14,10 @@ namespace LibraryManagement.Views.Main
     public partial class MainView : Form, IMainView
     {
 
+        public event EventHandler SetUp;
+        public event EventHandler ShowPreference;
+        public event EventHandler ShowMenuBar;
+
         public MainView()
         {
             InitializeComponent();
@@ -25,33 +27,43 @@ namespace LibraryManagement.Views.Main
             };
         }
 
-        private void Event_ResizeEnd(object sender, EventArgs e)
+        private void OpenFile(object sender, EventArgs e)
         {
-            if((sender as Form).WindowState == FormWindowState.Normal)
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                (sender as Form).WindowState = FormWindowState.Maximized;
+                string FileName = openFileDialog.FileName;
             }
         }
 
-        private static MainView instance;
-        public static MainView GetInstance()
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(instance == null || instance.IsDisposed)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                instance = new MainView();
+                string FileName = saveFileDialog.FileName;
             }
-            else
+        }
+
+        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in MdiChildren)
             {
-                if(instance.WindowState == FormWindowState.Minimized)
-                {
-                    instance.WindowState = FormWindowState.Maximized;
-                }
+                childForm.Close();
             }
-            return instance;
         }
 
         public void IitialComponent()
-        {   
+        {
             this.Controls.Add(SideBarMenu.GetInstance());
             this.Controls.Add(this.menuStrip);
             AssociateAndRaiseViewEvents();
@@ -59,13 +71,46 @@ namespace LibraryManagement.Views.Main
 
         private void AssociateAndRaiseViewEvents()
         {
-            libraryInforToolStripMenuItem.Click += delegate
+            PreferenceToolStripMenuItem.Click += delegate
             {
                 ShowPreference?.Invoke(this, EventArgs.Empty);
             };
+
+            statusBarToolStripMenuItem.Click += delegate
+            {
+                ShowMenuBar?.Invoke(statusBarToolStripMenuItem, EventArgs.Empty);
+            };
         }
 
-        public event EventHandler SetUp;
-        public event EventHandler ShowPreference;
+        private static MainView instance;
+
+        public string FormTitle { 
+            get => this.Text; 
+            set => this.Text = value.ToUpper(); 
+        }
+
+        public static MainView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new MainView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Maximized;
+                }
+            }
+            return instance;
+        }
+
+        private void Event_ResizeEnd(object sender, EventArgs e)
+        {
+            if ((sender as Form).WindowState == FormWindowState.Normal)
+            {
+                (sender as Form).WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

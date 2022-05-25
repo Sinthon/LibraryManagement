@@ -60,8 +60,8 @@ namespace LibraryManagement.Views.Category
             {
                 instance = new CategoryView();
                 instance.MdiParent = parentContainer;
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
+                //instance.FormBorderStyle = FormBorderStyle.None;
+                //instance.Dock = DockStyle.Fill;
             }
             else
             {

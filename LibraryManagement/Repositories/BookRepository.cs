@@ -51,27 +51,25 @@ namespace LibraryManagement.Repositories
         }
         public void Edit(BookModel model)
         {
-            MessageBox.Show(model.Publisdate.ToString());
+            var sql = @"UPDATE TBLBOOK SET BOOKID = :v0, BOOKTITLE = :v1, BOOKPAGE = TO_NUMBER(:v2), publishdate = TO_DATE( :v3, 'dd-mm-yyyy'), publisher = :v4,categoryid = :v5 WHERE bookid = :v0";
+            using (var connection = new OracleConnection(connectionString))
+            using (var command = new OracleCommand())
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
 
-            //var sql = @"UPDATE TBLBOOK SET BOOKTITLE = :v1, BOOKPAGE = :v2, publishdate = TO_DATE( :v3, 'DD-MM-YYYY'), publisher = :v4,categoryid = :v5 WHERE bookid = :v0";
-            //using (var connection = new OracleConnection(connectionString))
-            //using (var command = new OracleCommand())
-            //{
-            //    if (connection.State == ConnectionState.Closed)
-            //        connection.Open();
-
-            //    command.Connection = connection;
-            //    command.CommandText = sql;
-            //    command.CommandType = CommandType.Text;
-            //    command.Parameters.Add(new OracleParameter("v0", model.Id));
-            //    command.Parameters.Add(new OracleParameter("v1", model.Title));
-            //    command.Parameters.Add(new OracleParameter("v2", model.Page));
-            //    command.Parameters.Add(new OracleParameter("v3", model.Publisdate));
-            //    command.Parameters.Add(new OracleParameter("v4", model.Publisher));
-            //    command.Parameters.Add(new OracleParameter("v5", Convert.ToInt32(model.Category_id)));
-            //    command.ExecuteNonQuery();
-            //    connection.Close();
-            //}
+                command.Connection = connection;
+                command.CommandText = sql;
+                command.CommandType = CommandType.Text;
+                command.Parameters.Add(new OracleParameter("v0", model.Id));
+                command.Parameters.Add(new OracleParameter("v1", model.Title));
+                command.Parameters.Add(new OracleParameter("v2", model.Page));
+                command.Parameters.Add(new OracleParameter("v3", model.Publisdate.ToString("dd-MM-yyyy")));
+                command.Parameters.Add(new OracleParameter("v4", model.Publisher));
+                command.Parameters.Add(new OracleParameter("v5", Convert.ToInt32(model.Category_id)));
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
         public IEnumerable<BookModel> GetAll()
         {

@@ -203,13 +203,13 @@ namespace LibraryManagement.Views.Category
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem1.Text = "Delete";
             // 
             // CategoryView
@@ -224,7 +224,7 @@ namespace LibraryManagement.Views.Category
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Name = "CategoryView";
-            this.Text = "BookView";
+            this.Text = "Category";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);

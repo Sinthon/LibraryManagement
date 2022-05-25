@@ -29,7 +29,7 @@ namespace ReportService
             set
             {
                 report = value;
-                crystalReportViewer1.ReportSource = value;
+                crystalReportViewer1.ReportSource = report;
             }
         }
 
@@ -39,8 +39,8 @@ namespace ReportService
             {
                 instance = new PrintFormView();
                 instance.MdiParent = parentContainer;
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
+                //instance.FormBorderStyle = FormBorderStyle.None;
+                //instance.Dock = DockStyle.Fill;
             }
             else
             {

@@ -192,7 +192,7 @@ namespace LibraryManagement.Views.Books.Dialog
             // 
             this.publish_date.AccessibleRole = System.Windows.Forms.AccessibleRole.PropertyPage;
             this.publish_date.CustomFormat = "dd-mm-yyyy";
-            this.publish_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.publish_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.publish_date.Location = new System.Drawing.Point(87, 141);
             this.publish_date.Name = "publish_date";
             this.publish_date.Size = new System.Drawing.Size(142, 20);

@@ -31,6 +31,8 @@ namespace LibraryManagement.Views.BorrowBook
         {
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.fromdate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.todate = new System.Windows.Forms.DateTimePicker();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@ namespace LibraryManagement.Views.BorrowBook
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.fromdate = new System.Windows.Forms.DateTimePicker();
             this.cms_activities = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.previewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +73,25 @@ namespace LibraryManagement.Views.BorrowBook
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(891, 38);
             this.panel3.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(450, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "From";
+            // 
+            // fromdate
+            // 
+            this.fromdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fromdate.Location = new System.Drawing.Point(480, 9);
+            this.fromdate.Name = "fromdate";
+            this.fromdate.Size = new System.Drawing.Size(121, 20);
+            this.fromdate.TabIndex = 10;
             // 
             // label2
             // 
@@ -208,25 +227,6 @@ namespace LibraryManagement.Views.BorrowBook
             this.dataGridView1.Size = new System.Drawing.Size(861, 528);
             this.dataGridView1.TabIndex = 17;
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(450, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "From";
-            // 
-            // fromdate
-            // 
-            this.fromdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fromdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fromdate.Location = new System.Drawing.Point(480, 9);
-            this.fromdate.Name = "fromdate";
-            this.fromdate.Size = new System.Drawing.Size(121, 20);
-            this.fromdate.TabIndex = 10;
-            // 
             // cms_activities
             // 
             this.cms_activities.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -235,30 +235,30 @@ namespace LibraryManagement.Views.BorrowBook
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.cms_activities.Name = "cms_activities";
-            this.cms_activities.Size = new System.Drawing.Size(181, 114);
+            this.cms_activities.Size = new System.Drawing.Size(133, 92);
             // 
             // previewToolStripMenuItem
             // 
             this.previewToolStripMenuItem.Name = "previewToolStripMenuItem";
-            this.previewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.previewToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.previewToolStripMenuItem.Text = "Preview";
             // 
             // exportPDFToolStripMenuItem
             // 
             this.exportPDFToolStripMenuItem.Name = "exportPDFToolStripMenuItem";
-            this.exportPDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportPDFToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.exportPDFToolStripMenuItem.Text = "Export PDF";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // BorrowBookView
@@ -272,7 +272,7 @@ namespace LibraryManagement.Views.BorrowBook
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Name = "BorrowBookView";
-            this.Text = "BorrowBookView";
+            this.Text = "BorrowBook";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);

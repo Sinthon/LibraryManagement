@@ -54,8 +54,8 @@ namespace LibraryManagement.Views.Librarian
             {
                 instance = new LibrarianView();
                 instance.MdiParent = parentContainer;
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
+                //instance.FormBorderStyle = FormBorderStyle.None;
+                //instance.Dock = DockStyle.Fill;
             }
             else
             {

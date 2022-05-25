@@ -34,6 +34,10 @@ namespace LibraryManagement.Views.Author
             this.add = new System.Windows.Forms.Button();
             this.activities = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Filter = new System.Windows.Forms.ComboBox();
@@ -41,15 +45,11 @@ namespace LibraryManagement.Views.Author
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -108,6 +108,43 @@ namespace LibraryManagement.Views.Author
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(891, 604);
             this.panel5.TabIndex = 20;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(15, 38);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(861, 566);
+            this.panel6.TabIndex = 22;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(861, 566);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(876, 38);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(15, 566);
+            this.panel2.TabIndex = 21;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(15, 566);
+            this.panel1.TabIndex = 20;
             // 
             // panel3
             // 
@@ -183,43 +220,6 @@ namespace LibraryManagement.Views.Author
             this.label1.TabIndex = 0;
             this.label1.Text = "Author";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 38);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(15, 566);
-            this.panel1.TabIndex = 20;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(876, 38);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(15, 566);
-            this.panel2.TabIndex = 21;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.dataGridView1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(15, 38);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(861, 566);
-            this.panel6.TabIndex = 22;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(861, 566);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // AuthorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,13 +228,13 @@ namespace LibraryManagement.Views.Author
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Name = "AuthorView";
-            this.Text = "AuthorView";
+            this.Text = "Author";
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -19,6 +19,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using System.Data;
 using ReportService.Presenters;
 using ReportService;
+using System.Collections.Generic;
 
 namespace LibraryManagement.Presenters
 {
@@ -38,6 +39,12 @@ namespace LibraryManagement.Presenters
             _sideBar = sideBar;
             this.connectionString = connectionString;
             _mainview.SetUp += SetUp;
+            _mainview.ShowMenuBar += ShowMenuBar;
+        }
+
+        private void ShowMenuBar(object sender, EventArgs e)
+        {
+            _sideBar.Visible((sender as ToolStripMenuItem).Checked);
         }
 
         private void ShowBorrowBook(object sender, EventArgs e)
@@ -51,7 +58,7 @@ namespace LibraryManagement.Presenters
             IPrintFormView printFormView = PrintFormView.GetInstace((Form)_mainview);
             try
             {
-                table_report = borrowbook_repository.GetReprot(new string[] { "1" });
+                table_report = borrowbook_repository.GetReprot(new string[] { "1" , "2"});
                 table_report.WriteXml("Reporting/VIEW_BORROW_BOOK.xml", XmlWriteMode.WriteSchema);
 
                 table_header = auth_repository.GetPreference();
@@ -81,6 +88,7 @@ namespace LibraryManagement.Presenters
         {
             ILoginView loginview = LoginView.GetInstance();
             IAuthRepository repository = new AuthRepository(connectionString);
+            _dashboard = DashboardView.GetInstace(_mainview as Form);
 
             LoginPresenter.GetInstance(loginview, repository);
             (loginview as Form).ShowDialog((Form)_mainview);
@@ -88,7 +96,13 @@ namespace LibraryManagement.Presenters
             if (loginview.LoginSuccess)
             {
                 _mainview.IitialComponent();
-
+                var preference = repository.GetPreference();
+                //_dashboard.SetPreference((LibraryModel) repository.GetPreference());
+                _mainview.FormTitle = preference.Rows[0][1].ToString();
+                _dashboard.Company_name = preference.Rows[0][1].ToString();
+                _dashboard.Company_address = preference.Rows[0][2].ToString();
+                _dashboard.Company_website = preference.Rows[0][3].ToString();
+                _dashboard.Company_email = preference.Rows[0][4].ToString();
                 SubScriptEvent();
             }
         }

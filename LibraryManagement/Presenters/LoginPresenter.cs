@@ -13,7 +13,6 @@ namespace LibraryManagement.Presenters
 {
     public class LoginPresenter 
     {
-        private readonly string connectionString;
         private ILoginView _loginview;
         private IAuthRepository _repository;
         private ModelDataValidation validation;

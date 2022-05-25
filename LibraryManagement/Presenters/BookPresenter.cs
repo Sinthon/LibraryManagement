@@ -61,7 +61,7 @@ namespace LibraryManagement.Presenters
 
         private void Cancel(object sender, EventArgs e)
         {
-            _dialog.Hide();
+            _dialog.Close();
         }
 
         private void Save(object sender, EventArgs e)
@@ -83,9 +83,9 @@ namespace LibraryManagement.Presenters
                 else 
                     _repository.Add(model);
 
-                _dialog.Hide();
+                _dialog.Close();
 
-                ReloadList(null,null);
+                ReloadList(sender, e);
             }
             catch (Exception ex)
             {

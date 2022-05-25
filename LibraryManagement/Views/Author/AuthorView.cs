@@ -45,8 +45,8 @@ namespace LibraryManagement.Views.Author
             {
                 instance = new AuthorView();
                 instance.MdiParent = parentContainer;
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
+                //instance.FormBorderStyle = FormBorderStyle.None;
+                //instance.Dock = DockStyle.Fill;
             }
             else
             {

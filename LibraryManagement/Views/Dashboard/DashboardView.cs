@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,22 +21,29 @@ namespace LibraryManagement.Views.Dashboard
 
         private void AssociateAndRaiseViewEvents()
         {
-            Book.Click += delegate
+            btn_Book.Click += delegate
             {
                 ShowBooks?.Invoke(this, EventArgs.Empty);
             };
-            Borrow.Click += delegate
+            btn_BorrowBook.Click += delegate
             {
-                ShowBorrow?.Invoke(this, EventArgs.Empty);
+                ShowBorrowBook?.Invoke(this, EventArgs.Empty);
             };
-            Return.Click += delegate
+            btn_ReturnBook.Click += delegate
             {
                 ShowReturn?.Invoke(this, EventArgs.Empty);
             };
-            Author.Click += delegate
+            btn_Borrower.Click += delegate
             {
-                ShowAuthor?.Invoke(this, EventArgs.Empty);
+                ShowBorrower?.Invoke(this, EventArgs.Empty);
             };
+
+            if (Properties.Settings.Default.RememberMe)
+            {
+                checkBox2.Checked = Properties.Settings.Default.ShowLibraryInfo;
+                panel5.Visible = Properties.Settings.Default.ShowLibraryInfo;
+                panel6.Visible = Properties.Settings.Default.ShowLibraryInfo;
+            }
         }
 
         private static DashboardView instance;
@@ -64,9 +72,10 @@ namespace LibraryManagement.Views.Dashboard
         }
 
         public event EventHandler ShowBooks;
-        public event EventHandler ShowBorrow;
         public event EventHandler ShowReturn;
         public event EventHandler ShowAuthor;
+        public event EventHandler ShowBorrowBook;
+        public event EventHandler ShowBorrower;
 
         public static DashboardView GetInstace(Form parentContainer)
         {
@@ -74,8 +83,8 @@ namespace LibraryManagement.Views.Dashboard
             {
                 instance = new DashboardView();
                 instance.MdiParent = parentContainer;
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
+                //instance.FormBorderStyle = FormBorderStyle.None;
+                //instance.Dock = DockStyle.Fill;
             }
             else
             {
@@ -84,6 +93,23 @@ namespace LibraryManagement.Views.Dashboard
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        public void SetPreference(LibraryModel model)
+        {
+            campany_name.Text = model.Name;
+            company_email.Text = model.Email;
+            company_phone.Text = model.Phone;
+            comapany_website.Text = model.Website;
+            company_address.Text = model.Address;
+        }
+
+        private void Hide_library_infor(object sender, EventArgs e)
+        {
+            panel6.Visible = (sender as CheckBox).Checked;
+            panel5.Visible = (sender as CheckBox).Checked;
+            Properties.Settings.Default.ShowLibraryInfo = (sender as CheckBox).Checked;
+            Properties.Settings.Default.Save();
         }
     }
 }

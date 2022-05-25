@@ -58,5 +58,17 @@ namespace LibraryManagement.Properties {
                 this["RememberMe"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowLibraryInfo {
+            get {
+                return ((bool)(this["ShowLibraryInfo"]));
+            }
+            set {
+                this["ShowLibraryInfo"] = value;
+            }
+        }
     }
 }
