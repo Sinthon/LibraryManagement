@@ -155,7 +155,6 @@ namespace LibraryManagement.Views.Layout
             this.borrower.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.borrower.TextColor = System.Drawing.Color.Black;
             this.borrower.UseVisualStyleBackColor = false;
-            this.borrower.Click += new System.EventHandler(this.borrower_Click);
             // 
             // category
             // 

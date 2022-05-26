@@ -17,7 +17,7 @@ namespace LibraryManagement.Presenters
         private IAuthRepository _repository;
         private ModelDataValidation validation;
 
-        LoginPresenter(ILoginView loginview, IAuthRepository _repository)
+        public LoginPresenter(ILoginView loginview, IAuthRepository _repository)
         {
             _loginview = loginview;
             this._repository = _repository;
@@ -67,14 +67,6 @@ namespace LibraryManagement.Presenters
                 _loginview.LoginSuccess = false;
                 _loginview.ErrorMeaage = ex.Message;
             }
-        }
-
-        private static LoginPresenter instance;
-        public static LoginPresenter GetInstance(ILoginView loginview, IAuthRepository _repository)
-        {
-            if (instance == null)
-                instance = new LoginPresenter(loginview,_repository);
-            return instance;
         }
     }
 }

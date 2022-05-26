@@ -17,7 +17,7 @@ namespace LibraryManagement.Presenters
         private BindingSource BindingSource;
         private IEnumerable<LibrarianModel> list;
 
-        LibrarianPrecenter(ILibrarianView _librarianview, ILibrarianRepository _repository)
+        public LibrarianPrecenter(ILibrarianView _librarianview, ILibrarianRepository _repository)
         {
             BindingSource = new BindingSource();
 
@@ -32,14 +32,6 @@ namespace LibraryManagement.Presenters
         {
             list = _repository.GetAll();
             BindingSource.DataSource = list;
-        }
-
-        private static LibrarianPrecenter instance;
-        public static LibrarianPrecenter GetInstance(ILibrarianView _librarianview, ILibrarianRepository _repository)
-        {
-            if (instance == null)
-                instance = new LibrarianPrecenter(_librarianview, _repository);
-            return instance;
         }
     }
 }

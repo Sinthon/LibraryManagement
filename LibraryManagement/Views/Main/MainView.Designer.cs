@@ -99,7 +99,7 @@ namespace LibraryManagement.Views.Main
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.statusBarToolStripMenuItem.Text = "&Menu bar";
             // 
             // windowsMenu
@@ -121,6 +121,7 @@ namespace LibraryManagement.Views.Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(632, 453);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;

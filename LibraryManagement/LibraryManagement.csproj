@@ -148,6 +148,7 @@
     <Compile Include="ExcelServices\ExcelService.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\AuthorModel.cs" />
+    <Compile Include="Models\BorrowerModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\IAuthorRepository.cs" />
     <Compile Include="Models\IAuthRepository.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Models\LibraryModel.cs" />
     <Compile Include="Presenters\AuthorPresenter.cs" />
     <Compile Include="Presenters\BookPresenter.cs" />
+    <Compile Include="Presenters\BorrowerPresenter.cs" />
     <Compile Include="Presenters\CategoryPresenter.cs" />
     <Compile Include="Presenters\Commands\ModelDataValidation.cs" />
     <Compile Include="Presenters\LibrarianPrecenter.cs" />
@@ -211,6 +213,13 @@
       <DependentUpon>BorrowBookView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BorrowBook\IBorrowBookView.cs" />
+    <Compile Include="Views\Borrower\BorrowerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Borrower\BorrowerView.Designer.cs">
+      <DependentUpon>BorrowerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Borrower\IBorrowerView.cs" />
     <Compile Include="Views\Category\CategoryView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +310,9 @@
     <EmbeddedResource Include="Views\BorrowBook\BorrowBookView.resx">
       <DependentUpon>BorrowBookView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Borrower\BorrowerView.resx">
+      <DependentUpon>BorrowerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Category\CategoryView.resx">
       <DependentUpon>CategoryView.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +365,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\BorrowBook\Dialog\" />
+    <Folder Include="Views\Borrower\Dialog\" />
     <Folder Include="Views\Librarian\Dialog\" />
   </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">

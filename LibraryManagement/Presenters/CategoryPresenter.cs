@@ -19,7 +19,7 @@ namespace LibraryManagement.Presenters
 
         private ModelDataValidation validation;
 
-        CategoryPresenter(ICategoryView _catview, ICategoryDialog _dialog ,ICategoryRepository _repository)
+        public CategoryPresenter(ICategoryView _catview, ICategoryDialog _dialog ,ICategoryRepository _repository)
         {
             CategoryBindingSource = new BindingSource();
             validation = new ModelDataValidation();
@@ -144,14 +144,5 @@ namespace LibraryManagement.Presenters
             CategoryBindingSource.DataSource = categorylist;
         }
 
-        private static CategoryPresenter instance;
-        public static CategoryPresenter GetInstance(ICategoryView _catview, ICategoryDialog _dialog, ICategoryRepository _repository)
-        {
-            if(instance == null)
-            {
-                instance = new CategoryPresenter(_catview, _dialog, _repository);
-            }
-            return instance;
-        }
     }
 }

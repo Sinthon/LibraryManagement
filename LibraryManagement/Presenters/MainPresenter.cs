@@ -20,6 +20,7 @@ using System.Data;
 using ReportService.Presenters;
 using ReportService;
 using System.Collections.Generic;
+using LibraryManagement.Views.Borrower;
 
 namespace LibraryManagement.Presenters
 {
@@ -66,6 +67,8 @@ namespace LibraryManagement.Presenters
 
                 report.Load("Reporting/LibraryReprot.rpt");
                 report.Database.Tables[0].SetDataSource(table_report);
+                report.Subreports[0].Database.Tables[0].SetDataSource(table_header);
+
                 printFormView.reprotDocument = report;
                 printFormView.Refresh();
                 printFormView.Show();
@@ -81,7 +84,7 @@ namespace LibraryManagement.Presenters
             ILibrarianView librarianview = LibrarianView.GetInstace((Form)_mainview);
             ILibrarianRepository repository = new LibrarianRepository(connectionString);
             librarianview.Show();
-            LibrarianPrecenter.GetInstance(librarianview, repository);
+            new LibrarianPrecenter(librarianview, repository);
         }
 
         private void SetUp(object sender, EventArgs e)
@@ -90,7 +93,7 @@ namespace LibraryManagement.Presenters
             IAuthRepository repository = new AuthRepository(connectionString);
             _dashboard = DashboardView.GetInstace(_mainview as Form);
 
-            LoginPresenter.GetInstance(loginview, repository);
+            new LoginPresenter(loginview, repository);
             (loginview as Form).ShowDialog((Form)_mainview);
 
             if (loginview.LoginSuccess)
@@ -114,6 +117,7 @@ namespace LibraryManagement.Presenters
 
             _dashboard.ShowBooks += ShowBook;
             _dashboard.ShowAuthor += ShowAuthor;
+            _dashboard.ShowBorrower += ShowBorrower;
 
             _sideBar.ShowDahsBoard += ShowDashboard;
             _sideBar.ShowBooks += ShowBook;
@@ -122,8 +126,14 @@ namespace LibraryManagement.Presenters
             _sideBar.ShowLibrarian += ShowLibrarian;
             _sideBar.ShowBorrowBook += ShowBorrowBook;
             _sideBar.ShowSetting += ShowSetting;
-
+            _sideBar.ShowBorrower += ShowBorrower;
             _mainview.ShowPreference += ShowPreference;
+        }
+
+        private void ShowBorrower(object sender, EventArgs e)
+        {
+            IBorrowerView borrowerview = BorrowerView.GetInstance((Form)_mainview);
+            borrowerview.Show();
         }
 
         private void ShowPreference(object sender, EventArgs e)
@@ -145,7 +155,7 @@ namespace LibraryManagement.Presenters
             IAuthorRepository authorRepository = AuthorRepository.GetInstance(connectionString);
             IAuthorDialog authordialog = AuthorDialog.GetInstance();
             authorview.Show();
-            AuthorPresenter.GetInstance(authorview, authordialog, authorRepository);
+            new AuthorPresenter(authorview, authordialog, authorRepository);
         }
 
         private void ShowBook(object sender, EventArgs e)
@@ -156,12 +166,19 @@ namespace LibraryManagement.Presenters
             ICategoryRepository categoryRepository = CategoryRepository.GetInstance(connectionString);
             IBookRepository repository = new BookRepository(connectionString);
             bookview.Show();
-            BookPresenter.GetInstance(bookview,dailog,repository, categoryRepository);
+            new BookPresenter(bookview, dailog, repository, categoryRepository);
         }
 
         private void ShowDashboard(object sender, EventArgs e)
         {
+            IAuthRepository repository = new AuthRepository(connectionString);
+            var preference = repository.GetPreference();
             _dashboard = DashboardView.GetInstace((Form)_mainview);
+            _dashboard.Company_name = preference.Rows[0][1].ToString();
+            _dashboard.Company_address = preference.Rows[0][2].ToString();
+            _dashboard.Company_website = preference.Rows[0][3].ToString();
+            _dashboard.Company_email = preference.Rows[0][4].ToString();
+            SubScriptEvent();
             _dashboard.Show();
         }
 
@@ -171,7 +188,7 @@ namespace LibraryManagement.Presenters
             ICategoryRepository categoryRepository = CategoryRepository.GetInstance(connectionString);
             ICategoryDialog dialog = CategoryDilogView.GetInstance();
             catview.Show();
-            CategoryPresenter.GetInstance(catview, dialog, categoryRepository);
+            new CategoryPresenter(catview, dialog, categoryRepository);
         }
     }
 }

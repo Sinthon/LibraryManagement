@@ -29,7 +29,7 @@ namespace LibraryManagement.Presenters
         private BindingSource categoryBindingSource;
         private IEnumerable<CategoryModel> categorylist;
 
-        BookPresenter(IBookView _bookview, IBookDailog _dialog, IBookRepository _repository, ICategoryRepository categoryRepository)
+        public BookPresenter(IBookView _bookview, IBookDailog _dialog, IBookRepository _repository, ICategoryRepository categoryRepository)
         {
             booksBindingSource = new BindingSource();
             categoryBindingSource = new BindingSource();
@@ -178,14 +178,5 @@ namespace LibraryManagement.Presenters
             booksBindingSource.DataSource = booklist;
         }
 
-        private static BookPresenter instance;
-        public static BookPresenter GetInstance(IBookView _bookview, IBookDailog _dialog, IBookRepository _repository, ICategoryRepository categoryRepository)
-        {
-            if(instance== null)
-            {
-                instance = new BookPresenter(_bookview, _dialog, _repository,categoryRepository);
-            }
-            return instance;
-        }
     }
 }

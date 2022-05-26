@@ -45,7 +45,7 @@ namespace ReportService
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(916, 693);
+            this.panel3.Size = new System.Drawing.Size(916, 823);
             this.panel3.TabIndex = 12;
             // 
             // crystalReportViewer1
@@ -65,7 +65,7 @@ namespace ReportService
             this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.ShowRefreshButton = false;
             this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(886, 617);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(886, 747);
             this.crystalReportViewer1.TabIndex = 17;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -76,7 +76,7 @@ namespace ReportService
             this.panel5.Controls.Add(this.print);
             this.panel5.Controls.Add(this.export_pdf);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(15, 655);
+            this.panel5.Location = new System.Drawing.Point(15, 785);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(886, 38);
             this.panel5.TabIndex = 16;
@@ -123,7 +123,7 @@ namespace ReportService
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(901, 38);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(15, 655);
+            this.panel4.Size = new System.Drawing.Size(15, 785);
             this.panel4.TabIndex = 15;
             // 
             // panel2
@@ -132,7 +132,7 @@ namespace ReportService
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(15, 655);
+            this.panel2.Size = new System.Drawing.Size(15, 785);
             this.panel2.TabIndex = 14;
             // 
             // panel1
@@ -172,7 +172,7 @@ namespace ReportService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 693);
+            this.ClientSize = new System.Drawing.Size(916, 823);
             this.Controls.Add(this.panel3);
             this.Name = "PrintFormView";
             this.Text = "PreviewReport";

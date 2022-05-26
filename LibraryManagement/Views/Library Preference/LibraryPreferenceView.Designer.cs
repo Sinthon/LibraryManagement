@@ -30,23 +30,23 @@ namespace LibraryManagement.Views.Library_Preferent
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.changelogo = new System.Windows.Forms.Button();
+            this.website = new System.Windows.Forms.TextBox();
+            this.address = new System.Windows.Forms.TextBox();
+            this.phone = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.TextBox();
-            this.phone = new System.Windows.Forms.TextBox();
-            this.address = new System.Windows.Forms.TextBox();
-            this.website = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.changelogo = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,6 +62,17 @@ namespace LibraryManagement.Views.Library_Preferent
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(689, 38);
             this.panel2.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label4.Location = new System.Drawing.Point(17, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 24);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Library Information";
             // 
             // panel4
             // 
@@ -116,26 +127,47 @@ namespace LibraryManagement.Views.Library_Preferent
             this.panel3.Size = new System.Drawing.Size(689, 349);
             this.panel3.TabIndex = 20;
             // 
-            // logo
+            // website
             // 
-            this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.logo.Location = new System.Drawing.Point(522, 37);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(125, 125);
-            this.logo.TabIndex = 0;
-            this.logo.TabStop = false;
+            this.website.Location = new System.Drawing.Point(132, 175);
+            this.website.Multiline = true;
+            this.website.Name = "website";
+            this.website.Size = new System.Drawing.Size(341, 26);
+            this.website.TabIndex = 18;
             // 
-            // changelogo
+            // address
             // 
-            this.changelogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.changelogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changelogo.Location = new System.Drawing.Point(522, 178);
-            this.changelogo.Name = "changelogo";
-            this.changelogo.Size = new System.Drawing.Size(125, 25);
-            this.changelogo.TabIndex = 4;
-            this.changelogo.Text = "Change Logo";
-            this.changelogo.UseVisualStyleBackColor = true;
+            this.address.Location = new System.Drawing.Point(132, 211);
+            this.address.Multiline = true;
+            this.address.Name = "address";
+            this.address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.address.Size = new System.Drawing.Size(341, 91);
+            this.address.TabIndex = 17;
+            // 
+            // phone
+            // 
+            this.phone.Location = new System.Drawing.Point(132, 135);
+            this.phone.Multiline = true;
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(341, 26);
+            this.phone.TabIndex = 16;
+            // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(132, 96);
+            this.email.Multiline = true;
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(341, 26);
+            this.email.TabIndex = 15;
+            // 
+            // name
+            // 
+            this.name.Location = new System.Drawing.Point(132, 34);
+            this.name.Multiline = true;
+            this.name.Name = "name";
+            this.name.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.name.Size = new System.Drawing.Size(341, 49);
+            this.name.TabIndex = 14;
             // 
             // label6
             // 
@@ -182,58 +214,27 @@ namespace LibraryManagement.Views.Library_Preferent
             this.label1.TabIndex = 9;
             this.label1.Text = "LIBRARY NAME";
             // 
-            // name
+            // changelogo
             // 
-            this.name.Location = new System.Drawing.Point(132, 34);
-            this.name.Multiline = true;
-            this.name.Name = "name";
-            this.name.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.name.Size = new System.Drawing.Size(341, 49);
-            this.name.TabIndex = 14;
+            this.changelogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.changelogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changelogo.Location = new System.Drawing.Point(522, 178);
+            this.changelogo.Name = "changelogo";
+            this.changelogo.Size = new System.Drawing.Size(125, 25);
+            this.changelogo.TabIndex = 4;
+            this.changelogo.Text = "Change Logo";
+            this.changelogo.UseVisualStyleBackColor = true;
+            this.changelogo.Click += new System.EventHandler(this.changelogo_Click);
             // 
-            // email
+            // logo
             // 
-            this.email.Location = new System.Drawing.Point(132, 96);
-            this.email.Multiline = true;
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(341, 26);
-            this.email.TabIndex = 15;
-            // 
-            // phone
-            // 
-            this.phone.Location = new System.Drawing.Point(132, 135);
-            this.phone.Multiline = true;
-            this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(341, 26);
-            this.phone.TabIndex = 16;
-            // 
-            // address
-            // 
-            this.address.Location = new System.Drawing.Point(132, 211);
-            this.address.Multiline = true;
-            this.address.Name = "address";
-            this.address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.address.Size = new System.Drawing.Size(341, 91);
-            this.address.TabIndex = 17;
-            // 
-            // website
-            // 
-            this.website.Location = new System.Drawing.Point(132, 175);
-            this.website.Multiline = true;
-            this.website.Name = "website";
-            this.website.Size = new System.Drawing.Size(341, 26);
-            this.website.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(17, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 24);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Library Information";
+            this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.logo.Location = new System.Drawing.Point(522, 37);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(125, 125);
+            this.logo.TabIndex = 0;
+            this.logo.TabStop = false;
             // 
             // LiraryPreferentView
             // 

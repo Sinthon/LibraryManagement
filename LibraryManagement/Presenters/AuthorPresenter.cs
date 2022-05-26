@@ -21,7 +21,7 @@ namespace LibraryManagement.Presenters
         BindingSource authorbindingsource;
         IEnumerable<AuthorModel> authorlist;
 
-        AuthorPresenter(IAuthorView _authorview, IAuthorDialog _dialog, IAuthorRepository _repository)
+        public AuthorPresenter(IAuthorView _authorview, IAuthorDialog _dialog, IAuthorRepository _repository)
         {
             validation = new ModelDataValidation();
             authorbindingsource = new BindingSource();
@@ -37,16 +37,6 @@ namespace LibraryManagement.Presenters
         {
             var list = _repository.GetAll();
             authorbindingsource.DataSource = list;
-        }
-
-        private static AuthorPresenter instance;
-        public static AuthorPresenter GetInstance(IAuthorView _authorview, IAuthorDialog _dialog, IAuthorRepository _repository)
-        {
-            if(instance == null)
-            {
-                instance = new AuthorPresenter(_authorview, _dialog, _repository);
-            }
-            return instance;
         }
     }
 }

@@ -84,10 +84,5 @@ namespace LibraryManagement.Views.Layout
         public event EventHandler ShowBorrowBook;
         public event EventHandler ShowReturnBook;
         public event EventHandler ShowSetting;
-
-        private void borrower_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-        }
     }
 }
