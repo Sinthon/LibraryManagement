@@ -31,7 +31,7 @@ namespace LibraryManagement.Views.BorrowBook
             };
             close.Click += delegate
             {
-                CloseForm?.Invoke(this, EventArgs.Empty);
+                this.Close();
             };
             editToolStripMenuItem.Click += delegate
             {

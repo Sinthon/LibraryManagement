@@ -29,6 +29,7 @@ namespace LibraryManagement.Views.Borrower
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
@@ -41,9 +42,15 @@ namespace LibraryManagement.Views.Borrower
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cms_activities = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.previewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cms_activities.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -173,6 +180,40 @@ namespace LibraryManagement.Views.Borrower
             this.dataGridView1.Size = new System.Drawing.Size(861, 528);
             this.dataGridView1.TabIndex = 17;
             // 
+            // cms_activities
+            // 
+            this.cms_activities.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.previewToolStripMenuItem,
+            this.exportPDFToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.cms_activities.Name = "cms_activities";
+            this.cms_activities.Size = new System.Drawing.Size(133, 92);
+            // 
+            // previewToolStripMenuItem
+            // 
+            this.previewToolStripMenuItem.Name = "previewToolStripMenuItem";
+            this.previewToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.previewToolStripMenuItem.Text = "Preview";
+            // 
+            // exportPDFToolStripMenuItem
+            // 
+            this.exportPDFToolStripMenuItem.Name = "exportPDFToolStripMenuItem";
+            this.exportPDFToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.exportPDFToolStripMenuItem.Text = "Export PDF";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
             // BorrowerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +230,7 @@ namespace LibraryManagement.Views.Borrower
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.cms_activities.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,5 +249,10 @@ namespace LibraryManagement.Views.Borrower
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ContextMenuStrip cms_activities;
+        private System.Windows.Forms.ToolStripMenuItem previewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportPDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

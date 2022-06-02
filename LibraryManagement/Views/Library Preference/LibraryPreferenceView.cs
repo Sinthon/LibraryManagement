@@ -69,5 +69,10 @@ namespace LibraryManagement.Views.Library_Preferent
                 MessageBox.Show(FileName);
             }
         }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

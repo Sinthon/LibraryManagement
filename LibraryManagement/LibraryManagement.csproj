@@ -154,6 +154,7 @@
     <Compile Include="Models\IAuthRepository.cs" />
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\IBookRepository.cs" />
+    <Compile Include="Models\IBorrowerRepository.cs" />
     <Compile Include="Models\ICategoryRepository.cs" />
     <Compile Include="Models\ILibrarianRepository.cs" />
     <Compile Include="Models\ILibraryRepository.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\AuthRepository.cs" />
     <Compile Include="Repositories\BookRepository.cs" />
+    <Compile Include="Repositories\BorrowerRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\LibrarianRepository.cs" />
     <Compile Include="Repositories\LibraryRepository.cs" />
@@ -212,6 +214,7 @@
     <Compile Include="Views\BorrowBook\BorrowBookView.Designer.cs">
       <DependentUpon>BorrowBookView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\BorrowBook\Dialog\IBorrowerDialog.cs" />
     <Compile Include="Views\BorrowBook\IBorrowBookView.cs" />
     <Compile Include="Views\Borrower\BorrowerView.cs">
       <SubType>Form</SubType>
@@ -364,7 +367,6 @@
     <None Include="Resources\MicrosoftTeams-image.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\BorrowBook\Dialog\" />
     <Folder Include="Views\Borrower\Dialog\" />
     <Folder Include="Views\Librarian\Dialog\" />
   </ItemGroup>

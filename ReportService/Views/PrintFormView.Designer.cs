@@ -29,6 +29,8 @@ namespace ReportService
             this.panel1 = new System.Windows.Forms.Panel();
             this.refresh = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.template = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -138,6 +140,8 @@ namespace ReportService
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.template);
             this.panel1.Controls.Add(this.refresh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -168,6 +172,25 @@ namespace ReportService
             this.label1.TabIndex = 0;
             this.label1.Text = "Preview Report";
             // 
+            // template
+            // 
+            this.template.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.template.FormattingEnabled = true;
+            this.template.Location = new System.Drawing.Point(662, 9);
+            this.template.Name = "template";
+            this.template.Size = new System.Drawing.Size(121, 21);
+            this.template.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(572, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Select Template";
+            // 
             // PrintFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +219,8 @@ namespace ReportService
         private System.Windows.Forms.Button print;
         private System.Windows.Forms.Button export_pdf;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.ComboBox template;
+        private System.Windows.Forms.Label label2;
     }
 }
 

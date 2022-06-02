@@ -23,6 +23,12 @@ namespace ReportService
 
         private static PrintFormView instance;
 
+        public string Document_path
+        {
+            get => template.SelectedValue.ToString();
+            set => template.SelectedValue = value;
+        }
+
         ReportDocument IPrintFormView.reprotDocument
         { 
             get => report;
@@ -93,6 +99,14 @@ namespace ReportService
                 this.Cursor = Cursors.Default;
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void SetTemplate(BindingSource bindingsource)
+        {
+            template.DataSource = bindingsource.DataSource;
+            template.DisplayMember = "Name";
+            template.ValueMember = "String_path";
+            template.SelectedValue = 0;
         }
     }
 }

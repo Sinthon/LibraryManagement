@@ -16,6 +16,24 @@ namespace LibraryManagement.Views.Borrower
         public BorrowerView()
         {
             InitializeComponent();
+
+            txtSearch.KeyUp += delegate
+            {
+                Search?.Invoke(this, EventArgs.Empty);
+            };
+            close.Click += delegate
+            {
+                this.Close();
+            };
+            editToolStripMenuItem.Click += delegate
+            {
+                Edit?.Invoke(this, EventArgs.Empty);
+            };
+
+            deleteToolStripMenuItem.Click += delegate
+            {
+                Delete?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public string sValue { 

@@ -21,6 +21,7 @@ using ReportService.Presenters;
 using ReportService;
 using System.Collections.Generic;
 using LibraryManagement.Views.Borrower;
+using LibraryManagement.Views.BorrowBook.Dialog;
 
 namespace LibraryManagement.Presenters
 {
@@ -59,7 +60,7 @@ namespace LibraryManagement.Presenters
             IPrintFormView printFormView = PrintFormView.GetInstace((Form)_mainview);
             try
             {
-                table_report = borrowbook_repository.GetReprot(new string[] { "1" , "2"});
+                table_report = borrowbook_repository.GetReprot(new string[] { "1" , "2" , "3"});
                 table_report.WriteXml("Reporting/VIEW_BORROW_BOOK.xml", XmlWriteMode.WriteSchema);
 
                 table_header = auth_repository.GetPreference();
@@ -133,6 +134,10 @@ namespace LibraryManagement.Presenters
         private void ShowBorrower(object sender, EventArgs e)
         {
             IBorrowerView borrowerview = BorrowerView.GetInstance((Form)_mainview);
+            IBorrowerDialog dialog = null;
+
+            IBorrowerRepository repository = new BorrowerRepository(connectionString);
+            new BorrowerPresenter(borrowerview, dialog, repository);
             borrowerview.Show();
         }
 

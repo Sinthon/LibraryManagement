@@ -95,6 +95,7 @@ namespace LibraryManagement.Views.Library_Preferent
             this.close.TabIndex = 3;
             this.close.Text = "Close";
             this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // save
             // 
